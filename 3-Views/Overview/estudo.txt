@@ -2,7 +2,7 @@ Action Controller - Responsável por fazer a comunicação CRUD com a DB.
 Action View - Responsável por compilar o response
 
 Templates
-  '1-ERB (Embedded Ruby)
+  1-ERB (Embedded Ruby)
     ...infos sobre a sintax...
 
     a) <% ... %> 

@@ -1,0 +1,5 @@
+CRIAR CABEÇALHO E RODAPÉ RESERVA COM SEARCH BAR 
+
+1-Criar cabeçalho
+2-Img reserva usando image_tag
+3-Search bar para todas as sales

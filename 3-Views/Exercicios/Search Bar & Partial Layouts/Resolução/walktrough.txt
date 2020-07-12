@@ -1,0 +1,42 @@
+CRIAR CABEÇALHO E RODAPÉ RESERVA
+
+1-Cabeçalho
+  a) importar template de menu do bootstrap
+    i) link: <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"  %>
+    ii) copiar este link  no views/layouts/application.html.erb
+
+  b) pegar um template de Cabeçalho
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">
+        <%= image_tag "rsv.png" %>
+      </a>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Camisetas <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Planos</a>
+          </li>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Buscar no marketplace" aria-label="Recipient's username" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+              <form>
+                <button class="btn btn-outline-light" type="submit">
+                  Procurar
+                </button>
+              </form>
+            </div>
+          </div>
+        </ul>
+        
+      </div>
+    </nav>
+
+  c) criar um arquivo _menu.html.erb (controller de preferencia) e colar o item do bootstrap
+
+  d) Criar um icone de search
+    https://melvinchng.github.io/rails/SearchFeature.html#chapter-4-search-feature
+
+    
