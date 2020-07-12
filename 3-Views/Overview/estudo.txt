@@ -1,0 +1,122 @@
+Action Controller - Responsável por fazer a comunicação CRUD com a DB.
+Action View - Responsável por compilar o response
+
+Templates
+  '1-ERB (Embedded Ruby)
+    ...infos sobre a sintax...
+
+    a) <% ... %> 
+      i) Não há return
+      ii) Geralmente loops e etc
+
+    b) <%= ... %> 
+      i) Geralmente usado quando queremos um output
+
+    ...exemplo...
+
+    =================================
+    <h1>Names of all the people</h1>
+    <% @people.each do |person| %>
+      Name: <%= person.name %><br>
+    <% end %>
+  =================================
+
+
+  2-Builder 
+  (a teoria é nebulosa, vamos esperar a prática)
+
+    a) Geralmente é usado para processar .xml 
+
+
+  3-Jbuilder
+
+    a) Geralmente usado para manipular .json
+
+
+Partials
+Geralmente usado para manipular chunks de code e reutiliza-los 
+
+  ...exemplo ....
+
+  ============================================================================
+
+  1) ---------------------
+
+    <%= render "menu" %>
+
+    *Irá renderizar um arquivo _menu.html.erb
+
+  2) ---------------------
+
+    <%= render "shared/ad_banner" %>
+    
+    <h1>Products</h1>
+    
+    <p>Here are a few of our fine products:</p>
+    <% @products.each do |product| %>
+      <%= render partial: "product", locals: { product: product } %>
+    <% end %>
+    
+    <%= render "shared/footer" %>
+
+    *irá renderizar um pré-layout de cabeçalho e footer em arquivos
+    "_ad_banner.html.erb" e "_footer.html.erb"
+
+  3) ---------------------
+
+    <% @products.each do |product| %>
+      <%= render partial: "product", locals: { product: product } %>
+    <% end %>
+
+    *irá renderizar uma "partial" para cada um dos itens de um banco
+    
+    **O mesmo code menos verboso seria
+
+    <%= render partial: "product", collection: @products %>
+
+  ============================================================================
+
+
+Partial Layouts
+Numa analogia, seria como se criassemos uma "casca" para o nosso conteúdo do partial
+
+  ...exemplo....
+
+  ============================================================================
+
+  articles/_box.html.erb
+
+    <div class='box'>
+      <%= yield %>
+    </div>
+
+  articles/show.html.erb
+
+    <% render(layout: 'box', locals: { article: @article }) do %>
+      <div>
+        <p><%= article.body %></p>
+      </div>  
+    <% end %>
+
+  ============================================================================
+
+View paths
+(também neboluso, deixemos pra prática)
+
+
+Helpers provided by Action View
+Ainda não está 100% claro, mas parece que são tags que usamos nossso arquivo html.erb
+
+  a) image_path
+
+    image_path("edit.png") # => /assets/edit.png
+
+  b) javascript_path
+
+    javascript_path "common" # => /assets/common.js
+
+  c) stylesheet_path
+
+    stylesheet_path "application" # => /assets/application.css
+
+    

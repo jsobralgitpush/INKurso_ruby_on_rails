@@ -1,0 +1,90 @@
+ACTIVE RECORD MODEL - "M" do MVC
+
+Podemos ver o active record como um ORM, ou seja, uma forma de fazer queries num banco relacional via code. 
+  a) Para isso, precisamos criar um Model / Class pareado com uma Tabela / Schema
+  b) Existem alguns padrões de nomenclatura para eles; segue
+    Model / Class	      Table / Schema
+    Article	            articles
+  
+Para criarmos um active record models
+  a) Model
+    class Product < ApplicationRecord
+    end
+
+  b) Table
+    CREATE TABLE products (
+      id int(11) NOT NULL auto_increment,
+      name varchar(255),
+      PRIMARY KEY  (id)
+    );
+
+  c) Exemplo de chamada de um novo "produto"
+    p = Product.new
+    p.name = "Some Book"
+    puts p.name # "Some Book"
+  
+
+Existem vários métodos imbutidos nos Models, por Exemplo:
+  class Product < ApplicationRecord
+    self.table_name = "my_products"   #Aqui definimos que o nome da tabela (table_name) associada será "my_products" e não
+  end                                 #'products' como default 
+
+
+CRUD comandos
+  ...só alguns exemplos de sintax...
+
+  a) CREATE
+    I)
+      user = User.create(name: "David", occupation: "Code Artist")
+
+    II) 
+      user = User.new
+      user.name = "David"
+      user.occupation = "Code Artist"
+
+
+  b) READ
+    I)
+      users = User.all
+    
+    II)
+      david = User.find_by(name: 'David')
+    
+    III)
+      users = User.where(name: 'David', occupation: 'Code Artist').order(created_at: :desc)
+
+  c) UPDATE
+    I)
+      user = User.find_by(name: 'David')
+      user.name = 'Dave'
+      user.save
+    
+    II)      
+      user = User.find_by(name: 'David')
+      user.update(name: 'Dave')
+
+    III)
+
+  d) DELETE 
+    I)
+      user = User.find_by(name: 'David')
+      user.destroy
+    
+    II)
+      User.destroy_by(name: 'David')
+
+Validação de dados
+  ...um exemplo citado...
+
+  =========================================================================================  
+    class User < ApplicationRecord
+      validates :name, presence: true
+    end
+    
+    user = User.new
+    user.save  # => false
+    user.save! # => ActiveRecord::RecordInvalid: Validation failed: Name can't be blank
+  
+  =========================================================================================
+
+  

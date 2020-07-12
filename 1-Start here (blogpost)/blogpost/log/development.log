@@ -1,0 +1,1576 @@
+Started GET "/" for ::1 at 2020-07-10 12:09:16 -0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb (14.1ms)
+Completed 200 OK in 3298ms (Views: 42.5ms)
+
+
+Started GET "/" for ::1 at 2020-07-10 12:13:05 -0300
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 4868ms (Views: 4859.8ms)
+
+
+Started GET "/" for ::1 at 2020-07-10 12:13:28 -0300
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 190ms (Views: 174.7ms)
+
+
+Started GET "/posts/new" for ::1 at 2020-07-10 12:20:53 -0300
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (4.5ms)
+Completed 500 Internal Server Error in 43ms
+
+
+  
+SyntaxError (C:/Users/Sobral/Desktop/Dados para brincarmos/Ruby on Rails/blogpost/app/views/posts/new.html.erb:8: syntax error, unexpected '=', expecting `end'
+'.freeze;     = f.label :body  
+              ^
+C:/Users/Sobral/Desktop/Dados para brincarmos/Ruby on Rails/blogpost/app/views/posts/new.html.erb:9: syntax error, unexpected '=', expecting `end'
+     = f.text_area :body      
+     ^
+):
+  
+app/views/posts/new.html.erb:8: syntax error, unexpected '=', expecting `end'
+app/views/posts/new.html.erb:9: syntax error, unexpected '=', expecting `end'
+Started GET "/posts/new" for ::1 at 2020-07-10 12:21:23 -0300
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (11.4ms)
+Completed 500 Internal Server Error in 77ms
+
+
+  
+SyntaxError (C:/Users/Sobral/Desktop/Dados para brincarmos/Ruby on Rails/blogpost/app/views/posts/new.html.erb:8: syntax error, unexpected '=', expecting `end'
+'.freeze;     = f.label :body  
+              ^
+C:/Users/Sobral/Desktop/Dados para brincarmos/Ruby on Rails/blogpost/app/views/posts/new.html.erb:9: syntax error, unexpected '=', expecting `end'
+     = f.text_area :body      
+     ^
+):
+  
+app/views/posts/new.html.erb:8: syntax error, unexpected '=', expecting `end'
+app/views/posts/new.html.erb:9: syntax error, unexpected '=', expecting `end'
+Started GET "/posts/new" for ::1 at 2020-07-10 12:21:31 -0300
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (11.0ms)
+Completed 500 Internal Server Error in 83ms
+
+
+  
+SyntaxError (C:/Users/Sobral/Desktop/Dados para brincarmos/Ruby on Rails/blogpost/app/views/posts/new.html.erb:8: syntax error, unexpected '=', expecting `end'
+'.freeze;     = f.label :body  
+              ^
+C:/Users/Sobral/Desktop/Dados para brincarmos/Ruby on Rails/blogpost/app/views/posts/new.html.erb:9: syntax error, unexpected '=', expecting `end'
+     = f.text_area :body      
+     ^
+):
+  
+app/views/posts/new.html.erb:8: syntax error, unexpected '=', expecting `end'
+app/views/posts/new.html.erb:9: syntax error, unexpected '=', expecting `end'
+Started GET "/posts/new" for ::1 at 2020-07-10 12:21:40 -0300
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (3.7ms)
+Completed 500 Internal Server Error in 143ms
+
+
+  
+SyntaxError (C:/Users/Sobral/Desktop/Dados para brincarmos/Ruby on Rails/blogpost/app/views/posts/new.html.erb:18: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/views/posts/new.html.erb:18: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/posts/new" for ::1 at 2020-07-10 12:22:28 -0300
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (123.5ms)
+Completed 200 OK in 350ms (Views: 293.4ms)
+
+
+Started GET "/posts/new" for ::1 at 2020-07-10 12:22:45 -0300
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (18.4ms)
+Completed 200 OK in 231ms (Views: 174.9ms)
+
+
+Started GET "/posts/new" for ::1 at 2020-07-10 12:22:48 -0300
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (17.4ms)
+Completed 200 OK in 229ms (Views: 207.1ms)
+
+
+Started GET "/posts/new" for ::1 at 2020-07-10 12:24:54 -0300
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 227ms (Views: 123.9ms)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (46.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (21.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePosts (20200710152544)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "tittle" varchar, "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200710152544"]]
+  [1m[35m (20.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-07-10 15:26:20.154903"], ["updated_at", "2020-07-10 15:26:20.154903"]]
+  [1m[35m (19.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/posts/new" for ::1 at 2020-07-10 12:27:09 -0300
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 139ms (Views: 128.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts/new" for ::1 at 2020-07-10 12:27:15 -0300
+  
+ActionController::RoutingError (No route matches [POST] "/posts/new"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/posts/new" for ::1 at 2020-07-10 12:29:05 -0300
+  
+ActionController::RoutingError (No route matches [POST] "/posts/new"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/posts/new" for ::1 at 2020-07-10 12:29:10 -0300
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 141ms (Views: 129.3ms)
+
+
+Started POST "/posts/new" for ::1 at 2020-07-10 12:29:15 -0300
+  
+ActionController::RoutingError (No route matches [POST] "/posts/new"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/posts/new" for ::1 at 2020-07-10 12:32:34 -0300
+  
+ActionController::RoutingError (No route matches [POST] "/posts/new"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/posts/new" for ::1 at 2020-07-10 12:34:07 -0300
+  
+ActionController::RoutingError (No route matches [POST] "/posts/new"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/posts/new" for ::1 at 2020-07-10 12:34:44 -0300
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (595.7ms)
+Completed 500 Internal Server Error in 647ms
+
+
+  
+ActionView::Template::Error (undefined local variable or method `post_path' for #<#<Class:0x000000000b47d3e8>:0x000000000b44f9e8>
+Did you mean?  posts_path
+               font_path
+               root_path):
+    1: <h1>Add Post</h1>
+    2: <%= form_for :post, url: post_path do |f| %>
+    3:   <p>
+    4:     <%= f.label :title  %>
+    5:     <%= f.text_field :title  %>
+  
+app/views/posts/new.html.erb:2:in `_app_views_posts_new_html_erb__778025143_23440'
+Started GET "/posts/new" for ::1 at 2020-07-10 12:35:41 -0300
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 280ms (Views: 205.9ms)
+
+
+Started POST "/posts" for ::1 at 2020-07-10 12:35:45 -0300
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"djDYwXWBNzMiPc8jOhVJb9JaN/9ZY5+0rEc4TXZ1rNjn4473yqX+Wu75mYa8xjzEJHm7kKi1F9qzcRCoZrl48w==", "post"=>{"title"=>"teste", "text"=>"123"}, "commit"=>"Save Post"}
+Unpermitted parameters: :title, :text
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (11.0ms)[0m  [1m[32mINSERT INTO "posts" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2020-07-10 15:35:46.144775"], ["updated_at", "2020-07-10 15:35:46.144775"]]
+  [1m[35m (37.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to 
+Completed 500 Internal Server Error in 577ms (ActiveRecord: 57.0ms)
+
+
+  
+NoMethodError (undefined method `post_url' for #<PostsController:0x000000000d898610>
+Did you mean?  posts_url):
+  
+app/controllers/posts_controller.rb:18:in `create'
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePosts (20200710154021)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "tittle" varchar, "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+Started POST "/posts" for ::1 at 2020-07-10 12:41:05 -0300
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.1.7) lib/active_record/migration.rb:576:in `check_pending!'
+activerecord (5.1.7) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.7) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.7) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/posts" for ::1 at 2020-07-10 12:41:11 -0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.1.7) lib/active_record/migration.rb:576:in `check_pending!'
+activerecord (5.1.7) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.7) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.7) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePosts (20200710154021)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "tittle" varchar, "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePosts (20200710154021)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "tittle" varchar, "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/posts/new" for ::1 at 2020-07-10 12:42:42 -0300
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.1.7) lib/active_record/migration.rb:576:in `check_pending!'
+activerecord (5.1.7) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.7) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.7) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePosts (20200710154021)
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (7.3ms)[0m  [1m[35mCREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "tittle" varchar, "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/posts/new" for ::1 at 2020-07-10 12:43:47 -0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.1.7) lib/active_record/migration.rb:576:in `check_pending!'
+activerecord (5.1.7) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.7) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.7) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePosts (20200710154021)
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "tittle" varchar, "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/posts/new" for ::1 at 2020-07-10 12:44:35 -0300
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.1.7) lib/active_record/migration.rb:576:in `check_pending!'
+activerecord (5.1.7) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.7) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.7) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/posts/new" for ::1 at 2020-07-10 12:45:28 -0300
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 194ms (Views: 173.5ms)
+
+
+Started POST "/posts" for ::1 at 2020-07-10 12:45:36 -0300
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zDhgPN65Q7X1HIoXO3cS98occm6lhVf0gk2vsSpbCa1d6zYKYZ2K3DnY3LK9pGdcPD/+AVRT35qde4dUOpfdhg==", "post"=>{"title"=>"teste1", "text"=>"123"}, "commit"=>"Save Post"}
+Unpermitted parameters: :title, :text
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (11.6ms)[0m  [1m[32mINSERT INTO "posts" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2020-07-10 15:45:37.124443"], ["updated_at", "2020-07-10 15:45:37.124443"]]
+  [1m[35m (53.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to 
+Completed 500 Internal Server Error in 770ms (ActiveRecord: 71.4ms)
+
+
+  
+NoMethodError (undefined method `post_url' for #<PostsController:0x000000000fc0dcd0>
+Did you mean?  posts_url):
+  
+app/controllers/posts_controller.rb:18:in `create'
+Started GET "/posts/new" for ::1 at 2020-07-10 12:46:58 -0300
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 182ms (Views: 159.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for ::1 at 2020-07-10 12:47:04 -0300
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"huHhyaFGNW+kKBXQtaHqW/OXVf7Jd51t2YMxBpHDbYwXMrf/HmL8BmjsQ3Uzcp/wBbTZkTihFQPGtRnjgQ+5pw==", "post"=>{"title"=>"teste", "text"=>"123"}, "commit"=>"Save Post"}
+Unpermitted parameters: :title, :text
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (16.9ms)[0m  [1m[32mINSERT INTO "posts" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2020-07-10 15:47:04.390687"], ["updated_at", "2020-07-10 15:47:04.390687"]]
+  [1m[35m (38.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to 
+Completed 500 Internal Server Error in 339ms (ActiveRecord: 55.3ms)
+
+
+  
+NoMethodError (undefined method `post_url' for #<PostsController:0x000000000e441e80>
+Did you mean?  posts_url):
+  
+app/controllers/posts_controller.rb:18:in `create'
+Started POST "/posts" for ::1 at 2020-07-10 12:47:26 -0300
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"huHhyaFGNW+kKBXQtaHqW/OXVf7Jd51t2YMxBpHDbYwXMrf/HmL8BmjsQ3Uzcp/wBbTZkTihFQPGtRnjgQ+5pw==", "post"=>{"title"=>"teste", "text"=>"123"}, "commit"=>"Save Post"}
+Unpermitted parameters: :title, :text
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (14.6ms)[0m  [1m[32mINSERT INTO "posts" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2020-07-10 15:47:27.106030"], ["updated_at", "2020-07-10 15:47:27.106030"]]
+  [1m[35m (37.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to 
+Completed 500 Internal Server Error in 117ms (ActiveRecord: 56.6ms)
+
+
+  
+ActionController::ActionControllerError (Cannot redirect to nil!):
+  
+app/controllers/posts_controller.rb:18:in `create'
+Started POST "/posts" for ::1 at 2020-07-10 12:47:35 -0300
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"huHhyaFGNW+kKBXQtaHqW/OXVf7Jd51t2YMxBpHDbYwXMrf/HmL8BmjsQ3Uzcp/wBbTZkTihFQPGtRnjgQ+5pw==", "post"=>{"title"=>"teste", "text"=>"123"}, "commit"=>"Save Post"}
+Unpermitted parameters: :title, :text
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (14.8ms)[0m  [1m[32mINSERT INTO "posts" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2020-07-10 15:47:35.613612"], ["updated_at", "2020-07-10 15:47:35.613612"]]
+  [1m[35m (40.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to 
+Completed 500 Internal Server Error in 387ms (ActiveRecord: 61.6ms)
+
+
+  
+NoMethodError (undefined method `post_url' for #<PostsController:0x0000000011d03f20>
+Did you mean?  posts_url):
+  
+app/controllers/posts_controller.rb:18:in `create'
+Started GET "/posts/new" for ::1 at 2020-07-10 12:48:19 -0300
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 170ms (Views: 155.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for ::1 at 2020-07-10 12:48:28 -0300
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"r78ULc+YqZxiW2t7l9GxndaJM/mrKb+X5HGQ5WS8JaQ+bEIbcLxg9a6fPd4RAsQ2IKq/llr/N/n7R7gAdHDxjw==", "post"=>{"title"=>"Post one", "text"=>"post one\r\n"}, "commit"=>"Save Post"}
+Unpermitted parameters: :title, :text
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (18.8ms)[0m  [1m[32mINSERT INTO "posts" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2020-07-10 15:48:28.378517"], ["updated_at", "2020-07-10 15:48:28.378517"]]
+  [1m[35m (36.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to 
+Completed 500 Internal Server Error in 327ms (ActiveRecord: 55.3ms)
+
+
+  
+NoMethodError (undefined method `post_url' for #<PostsController:0x000000000dcbae28>
+Did you mean?  posts_url):
+  
+app/controllers/posts_controller.rb:18:in `create'
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePosts (20200710155039)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/posts/new" for ::1 at 2020-07-10 12:51:12 -0300
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.1.7) lib/active_record/migration.rb:576:in `check_pending!'
+activerecord (5.1.7) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.7) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.7) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePosts (20200710155039)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/posts/new" for ::1 at 2020-07-10 12:52:05 -0300
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.1.7) lib/active_record/migration.rb:576:in `check_pending!'
+activerecord (5.1.7) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.7) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.7) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePosts (20200710155039)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/posts/new" for ::1 at 2020-07-10 12:53:19 -0300
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.1.7) lib/active_record/migration.rb:576:in `check_pending!'
+activerecord (5.1.7) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.7) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.7) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/posts/new" for ::1 at 2020-07-10 12:53:49 -0300
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.1.7) lib/active_record/migration.rb:576:in `check_pending!'
+activerecord (5.1.7) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.7) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.7) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePosts (20200710155039)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/posts/new" for ::1 at 2020-07-10 12:55:19 -0300
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.1.7) lib/active_record/migration.rb:576:in `check_pending!'
+activerecord (5.1.7) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.7) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.7) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePosts (20200710155039)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePosts (20200710155039)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/posts/new" for ::1 at 2020-07-10 12:56:55 -0300
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.1.7) lib/active_record/migration.rb:576:in `check_pending!'
+activerecord (5.1.7) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.7) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.7) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePosts (20200710155039)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/posts/new" for ::1 at 2020-07-10 12:58:10 -0300
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 157ms (Views: 141.8ms)
+
+
+Started POST "/posts" for ::1 at 2020-07-10 12:58:15 -0300
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"C5mUinECHiVgqeX9po4uYJ9s/BWVoLX7fXLXwzCQ0U+aSsK8zibXTKxts1ggXVvLaU9wemR2PZViRP8mIFwFZA==", "post"=>{"title"=>"teste", "text"=>"123"}, "commit"=>"Save Post"}
+Unpermitted parameters: :title, :text
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (11.3ms)[0m  [1m[32mINSERT INTO "posts" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2020-07-10 15:58:15.966507"], ["updated_at", "2020-07-10 15:58:15.966507"]]
+  [1m[35m (34.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to 
+Completed 500 Internal Server Error in 371ms (ActiveRecord: 48.9ms)
+
+
+  
+NoMethodError (undefined method `post_url' for #<PostsController:0x000000000dbacae0>
+Did you mean?  posts_url):
+  
+app/controllers/posts_controller.rb:18:in `create'
+Started GET "/posts/new" for ::1 at 2020-07-10 12:58:40 -0300
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 157ms (Views: 149.4ms)
+
+
+Started POST "/posts" for ::1 at 2020-07-10 12:58:47 -0300
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yOFFLOvWNAEvblvPyagpaK64rrGzgWt68p7lma07tKFZMhMaVPL9aOOqDWpPe1zDWJsi3kJX4xTtqM18vfdgig==", "post"=>{"title"=>"111111", "text"=>"11"}, "commit"=>"Save Post"}
+Unpermitted parameters: :title, :text
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (13.0ms)[0m  [1m[32mINSERT INTO "posts" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2020-07-10 15:58:47.542271"], ["updated_at", "2020-07-10 15:58:47.542271"]]
+  [1m[35m (40.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 156ms (ActiveRecord: 59.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=):
+  
+app/controllers/posts_controller.rb:7:in `show'
+app/controllers/posts_controller.rb:18:in `create'
+Started GET "/posts/new" for ::1 at 2020-07-10 12:59:52 -0300
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.1.7) lib/active_record/migration.rb:576:in `check_pending!'
+activerecord (5.1.7) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.7) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.7) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePosts (20200710155946)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePosts (20200710155946)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (17.6ms)[0m  [1m[35mCREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200710155946"]]
+  [1m[35m (33.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/posts/new" for ::1 at 2020-07-10 13:02:49 -0300
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 149ms (Views: 142.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for ::1 at 2020-07-10 13:02:54 -0300
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"A1nq4De8fF3tskDJI0cFSfE15F64wBkz/VWbAbTZke6SirzWiJi1NCF2FmyllHDiBxZoMUkWkV3iY7PkpBVFxQ==", "post"=>{"title"=>"teste", "text"=>"123"}, "commit"=>"Save Post"}
+Unpermitted parameters: :title, :text
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (19.1ms)[0m  [1m[32mINSERT INTO "posts" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2020-07-10 16:02:54.389352"], ["updated_at", "2020-07-10 16:02:54.389352"]]
+  [1m[35m (32.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 123ms (ActiveRecord: 56.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=):
+  
+app/controllers/posts_controller.rb:7:in `show'
+app/controllers/posts_controller.rb:18:in `create'
+Started GET "/posts/new" for ::1 at 2020-07-10 13:03:42 -0300
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 166ms (Views: 156.5ms)
+
+
+Started POST "/posts" for ::1 at 2020-07-10 13:03:46 -0300
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e92AILNkcsTAP8yReIoZRWmbCfNnGVVNvolF6sB/qVXqDtYWDEC7rQz7mjT+WWzun7iFnJbP3SOhv20P0LN9fg==", "post"=>{"title"=>"teste", "text"=>"123"}, "commit"=>"Save Post"}
+Unpermitted parameters: :title, :text
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (20.2ms)[0m  [1m[32mINSERT INTO "posts" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2020-07-10 16:03:47.134023"], ["updated_at", "2020-07-10 16:03:47.134023"]]
+  [1m[35m (34.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to 
+Completed 500 Internal Server Error in 497ms (ActiveRecord: 62.3ms)
+
+
+  
+NoMethodError (undefined method `post_url' for #<PostsController:0x000000001004db60>
+Did you mean?  posts_url):
+  
+app/controllers/posts_controller.rb:18:in `create'
+Started GET "/posts/new" for ::1 at 2020-07-10 13:04:27 -0300
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 134ms (Views: 127.0ms)
+
+
+Started POST "/posts" for ::1 at 2020-07-10 13:04:34 -0300
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ag323clmTc8DQaWzvySuL9ByHS0ABCWbpVdE/ITTytaT3qDrdkKEps+F8xY599uEJlGRQvHSrfW6YWwZlB8e/Q==", "post"=>{"title"=>"teste", "text"=>"123"}, "commit"=>"Save Post"}
+Unpermitted parameter: :text
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (20.7ms)[0m  [1m[32mINSERT INTO "posts" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "teste"], ["created_at", "2020-07-10 16:04:34.968107"], ["updated_at", "2020-07-10 16:04:34.968107"]]
+  [1m[35m (33.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to 
+Completed 500 Internal Server Error in 361ms (ActiveRecord: 57.6ms)
+
+
+  
+NoMethodError (undefined method `post_url' for #<PostsController:0x0000000010b17640>
+Did you mean?  posts_url):
+  
+app/controllers/posts_controller.rb:18:in `create'
+Started GET "/posts/new" for ::1 at 2020-07-10 13:05:07 -0300
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 147ms (Views: 137.8ms)
+
+
+Started POST "/posts" for ::1 at 2020-07-10 13:05:12 -0300
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IPVjN/e6zqcGP1f2Thb2kqU+u8Wx21I0osHAh+x6QRixJjUBSJ4Hzsr7AVPIxYM5Ux03qkAN2lq99+hi/LaVMw==", "post"=>{"title"=>"teste", "text"=>"123"}, "commit"=>"Save Post"}
+Unpermitted parameter: :text
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (22.7ms)[0m  [1m[32mINSERT INTO "posts" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "teste"], ["created_at", "2020-07-10 16:05:12.473913"], ["updated_at", "2020-07-10 16:05:12.473913"]]
+  [1m[35m (31.1ms)[0m  [1m[36mcommit transaction[0m
+No template found for PostsController#create, rendering head :no_content
+Completed 204 No Content in 452ms (ActiveRecord: 58.0ms)
+
+
+Started GET "/posts/new" for ::1 at 2020-07-10 13:05:46 -0300
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 270ms (Views: 250.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for ::1 at 2020-07-10 13:06:00 -0300
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NIhDe7sIBEWcxLifu+BdiFdH+5VG0X5kKNF5IaWUt56lWxVNBCzNLFAA7jo9MygjoWR3+rcH9go351HEtVhjtQ==", "post"=>{"title"=>"Post One", "text"=>"testing\r\n"}, "commit"=>"Save Post"}
+Unpermitted parameter: :text
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (23.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["title", "Post One"], ["created_at", "2020-07-10 16:06:00.240865"], ["updated_at", "2020-07-10 16:06:00.240865"]]
+  [1m[35m (37.7ms)[0m  [1m[36mcommit transaction[0m
+No template found for PostsController#create, rendering head :no_content
+Completed 204 No Content in 428ms (ActiveRecord: 61.3ms)
+
+
+Started GET "/posts/new" for ::1 at 2020-07-10 13:07:02 -0300
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 337ms (Views: 254.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for ::1 at 2020-07-10 13:07:10 -0300
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YPDyVyz8MXvMPQucYnaOmkRUxHu9ZuSWq+5p7Vz0DsvxI6Rhk9j4EgD5XTnkpfsxsndIFEywbPi02EEITDja4A==", "post"=>{"title"=>"Post two", "body"=>"body"}, "commit"=>"Save Post"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (6.5ms)[0m  [1m[32mINSERT INTO "posts" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Post two"], ["body", "body"], ["created_at", "2020-07-10 16:07:10.572847"], ["updated_at", "2020-07-10 16:07:10.572847"]]
+  [1m[35m (35.6ms)[0m  [1m[36mcommit transaction[0m
+No template found for PostsController#create, rendering head :no_content
+Completed 204 No Content in 390ms (ActiveRecord: 42.4ms)
+
+
+Started GET "/posts/new" for ::1 at 2020-07-10 13:07:50 -0300
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 178ms (Views: 165.3ms)
+
+
+Started POST "/posts" for ::1 at 2020-07-10 13:07:58 -0300
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9VnxQ5EFUPst6MjotexS4HqUWmmhIHBDh0E1Hsy1dYlkiqd1LiGZkuEsnk0zPydLjLfWBlD2+C2Ydx373Hmhog==", "post"=>{"title"=>"Post three", "body"=>"testing"}, "commit"=>"Save Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Post three"], ["body", "testing"], ["created_at", "2020-07-10 16:07:58.897013"], ["updated_at", "2020-07-10 16:07:58.897013"]]
+  [1m[35m (33.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to 
+Completed 500 Internal Server Error in 410ms (ActiveRecord: 45.1ms)
+
+
+  
+NoMethodError (undefined method `post_url' for #<PostsController:0x000000000fd05890>
+Did you mean?  posts_url):
+  
+app/controllers/posts_controller.rb:18:in `create'
+Started GET "/" for ::1 at 2020-07-10 13:10:57 -0300
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 57ms
+
+
+  
+SyntaxError (C:/Users/Sobral/Desktop/Dados para brincarmos/Ruby on Rails/blogpost/app/views/posts/index.html.erb:3: syntax error, unexpected '=', expecting `end'
+....safe_append='  <h3>'.freeze; = post.title ;@output_buffer.s...
+...                              ^
+C:/Users/Sobral/Desktop/Dados para brincarmos/Ruby on Rails/blogpost/app/views/posts/index.html.erb:4: syntax error, unexpected '=', expecting `end'
+  <h3>'.freeze; = post.body ;@output_buffer.sa...
+                ^
+C:/Users/Sobral/Desktop/Dados para brincarmos/Ruby on Rails/blogpost/app/views/posts/index.html.erb:7: syntax error, unexpected `ensure', expecting end-of-input
+          ensure
+          ^~~~~~
+):
+  
+app/views/posts/index.html.erb:3: syntax error, unexpected '=', expecting `end'
+app/views/posts/index.html.erb:4: syntax error, unexpected '=', expecting `end'
+app/views/posts/index.html.erb:7: syntax error, unexpected `ensure', expecting end-of-input
+Started GET "/" for ::1 at 2020-07-10 13:11:29 -0300
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (2.4ms)
+Completed 500 Internal Server Error in 93ms
+
+
+  
+SyntaxError (C:/Users/Sobral/Desktop/Dados para brincarmos/Ruby on Rails/blogpost/app/views/posts/index.html.erb:3: syntax error, unexpected '=', expecting `end'
+....safe_append='  <h3>'.freeze; = post.title ;@output_buffer.s...
+...                              ^
+C:/Users/Sobral/Desktop/Dados para brincarmos/Ruby on Rails/blogpost/app/views/posts/index.html.erb:4: syntax error, unexpected '=', expecting `end'
+  <p>'.freeze; = post.body ;@output_buffer.sa...
+               ^
+C:/Users/Sobral/Desktop/Dados para brincarmos/Ruby on Rails/blogpost/app/views/posts/index.html.erb:7: syntax error, unexpected `ensure', expecting end-of-input
+          ensure
+          ^~~~~~
+):
+  
+app/views/posts/index.html.erb:3: syntax error, unexpected '=', expecting `end'
+app/views/posts/index.html.erb:4: syntax error, unexpected '=', expecting `end'
+app/views/posts/index.html.erb:7: syntax error, unexpected `ensure', expecting end-of-input
+Started GET "/" for ::1 at 2020-07-10 13:12:26 -0300
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (2.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (66.4ms)
+Completed 200 OK in 318ms (Views: 256.6ms | ActiveRecord: 13.9ms)
+
+
+Started GET "/posts/new" for ::1 at 2020-07-10 13:13:21 -0300
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 134ms (Views: 126.7ms)
+
+
+Started POST "/posts" for ::1 at 2020-07-10 13:13:29 -0300
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vBLkv9ryVP/aVGobSVPkubPGhjyw5FP2pUvEZsQ11yctwbKJZdadlhaQPL7PgJESReUKU0Ey25i6feyD1PkDDA==", "post"=>{"title"=>"Post four", "body"=>"123"}, "commit"=>"Save Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (16.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Post four"], ["body", "123"], ["created_at", "2020-07-10 16:13:29.382016"], ["updated_at", "2020-07-10 16:13:29.382016"]]
+  [1m[35m (34.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT ?[0m  [["LIMIT", 11]]
+Redirected to 
+  [1m[36mCACHE Post Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT ?[0m  [["LIMIT", 11]]
+Completed 500 Internal Server Error in 163ms (ActiveRecord: 55.9ms)
+
+
+  
+  [1m[36mCACHE Post Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT ?[0m  [["LIMIT", 11]]
+NoMethodError (undefined method `to_model' for #<Post::ActiveRecord_Relation:0x000000001131b3c8>
+Did you mean?  to_xml):
+  
+app/controllers/posts_controller.rb:18:in `create'
+Started GET "/posts/new" for ::1 at 2020-07-10 13:13:40 -0300
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 156ms (Views: 147.6ms)
+
+
+Started POST "/posts" for ::1 at 2020-07-10 13:13:45 -0300
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Gg5qZ4m3JXAwQcFZTuLejMc/pYoV59neuYI/KZwFC5iL3TxRNpPsGfyFl/zIMasnMRwp5eQxUbCmtBfMjMnfsw==", "post"=>{"title"=>"teste", "body"=>"123"}, "commit"=>"Save Post"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (17.2ms)[0m  [1m[32mINSERT INTO "posts" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "teste"], ["body", "123"], ["created_at", "2020-07-10 16:13:45.380933"], ["updated_at", "2020-07-10 16:13:45.380933"]]
+  [1m[35m (32.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to 
+Completed 500 Internal Server Error in 137ms (ActiveRecord: 56.5ms)
+
+
+  
+ActionController::ActionControllerError (Cannot redirect to nil!):
+  
+app/controllers/posts_controller.rb:18:in `create'
+Started GET "/posts/new" for ::1 at 2020-07-10 13:14:00 -0300
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 183ms (Views: 172.6ms)
+
+
+Started POST "/posts" for ::1 at 2020-07-10 13:14:06 -0300
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RADdL98Cm+3M8CFGHzU0YrRs/xsmtnEoYvwC/58N9pHV04sZYCZShAA0d+OZ5kHJQk9zdNdg+UZ9yioaj8Eiug==", "post"=>{"title"=>"Post one", "body"=>"ff"}, "commit"=>"Save Post"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (17.9ms)[0m  [1m[32mINSERT INTO "posts" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Post one"], ["body", "ff"], ["created_at", "2020-07-10 16:14:06.913339"], ["updated_at", "2020-07-10 16:14:06.913339"]]
+  [1m[35m (40.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to 
+Completed 500 Internal Server Error in 497ms (ActiveRecord: 66.9ms)
+
+
+  
+NoMethodError (undefined method `post_url' for #<PostsController:0x000000000fbecff8>
+Did you mean?  posts_url):
+  
+app/controllers/posts_controller.rb:18:in `create'
+Started GET "/posts/new" for ::1 at 2020-07-10 13:14:14 -0300
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 261ms (Views: 251.2ms)
+
+
+Started POST "/posts" for ::1 at 2020-07-10 13:14:19 -0300
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VBWPcasidFWXHmEwK/5jKslp0uQsE0w6NWXA7gmRqOzFxtlHFAa9PFvaN5WtLRaBP0pei93FxFQqU+gLGV18xw==", "post"=>{"title"=>"teste", "body"=>"test"}, "commit"=>"Save Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (17.7ms)[0m  [1m[32mINSERT INTO "posts" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "teste"], ["body", "test"], ["created_at", "2020-07-10 16:14:19.978594"], ["updated_at", "2020-07-10 16:14:19.978594"]]
+  [1m[35m (38.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to 
+Completed 500 Internal Server Error in 127ms (ActiveRecord: 63.4ms)
+
+
+  
+ActionController::ActionControllerError (Cannot redirect to nil!):
+  
+app/controllers/posts_controller.rb:18:in `create'
+Started GET "/posts/new" for ::1 at 2020-07-10 13:15:18 -0300
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 204ms (Views: 195.3ms)
+
+
+Started POST "/posts" for ::1 at 2020-07-10 13:15:23 -0300
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"T6XrSqs5TSiSRQs+pEQi9bOQbINL/zSvA+S+JacbfoPedr18FB2EQV6BXZsil1deRbPg7LopvMEc0pbAt9eqqA==", "post"=>{"title"=>"asdd", "body"=>"adsad"}, "commit"=>"Save Post"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.7ms)[0m  [1m[32mINSERT INTO "posts" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "asdd"], ["body", "adsad"], ["created_at", "2020-07-10 16:15:23.446952"], ["updated_at", "2020-07-10 16:15:23.446952"]]
+  [1m[35m (25.0ms)[0m  [1m[36mcommit transaction[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (15.9ms)
+Completed 500 Internal Server Error in 133ms (ActiveRecord: 32.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <h1>Blog Posts</h1>
+    2: <% @posts.each do |post| %>
+    3:   <h3><%= post.title %></h3>
+    4:   <p><%= post.body %></p>
+    5: <% end %>
+  
+app/views/posts/index.html.erb:2:in `_app_views_posts_index_html_erb__1049268147_66220'
+app/controllers/posts_controller.rb:18:in `create'
+Started GET "/" for ::1 at 2020-07-10 13:15:31 -0300
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (3.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 268ms (Views: 232.5ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/posts/new" for ::1 at 2020-07-10 13:15:49 -0300
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 216ms (Views: 201.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for ::1 at 2020-07-10 13:15:54 -0300
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"B4ne7e5ueasrpghS4GlRqDoH+cUDTx6E9j3pf7LyhKCWWojbUUqwwudiXvdmuiQDzCR1qvKZlurpC8Gaoj5Qiw==", "post"=>{"title"=>"dsadasd", "body"=>"asdsd"}, "commit"=>"Save Post"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (6.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "dsadasd"], ["body", "asdsd"], ["created_at", "2020-07-10 16:15:55.164065"], ["updated_at", "2020-07-10 16:15:55.164065"]]
+  [1m[35m (27.1ms)[0m  [1m[36mcommit transaction[0m
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (12.9ms)
+Completed 500 Internal Server Error in 84ms (ActiveRecord: 33.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <h1>Blog Posts</h1>
+    2: <% @posts.each do |post| %>
+    3:   <h3><%= post.title %></h3>
+    4:   <p><%= post.body %></p>
+    5: <% end %>
+  
+app/views/posts/index.html.erb:2:in `_app_views_posts_index_html_erb__1049268147_66900'
+app/controllers/posts_controller.rb:18:in `create'
+Started GET "/posts/new" for ::1 at 2020-07-10 13:16:23 -0300
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 175ms (Views: 165.8ms)
+
+
+Started POST "/posts" for ::1 at 2020-07-10 13:16:28 -0300
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cwk/pTtMVSxQ1Ytac+xsKX5WQc23XxoubalT79oB2oPi2mmThGicRZwR3f/1PxmCiHXNokaJkkByn3sKys0OqA==", "post"=>{"title"=>"111111", "body"=>"1111"}, "commit"=>"Save Post"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (22.2ms)[0m  [1m[32mINSERT INTO "posts" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "111111"], ["body", "1111"], ["created_at", "2020-07-10 16:16:28.817429"], ["updated_at", "2020-07-10 16:16:28.817429"]]
+  [1m[35m (35.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 139ms (ActiveRecord: 62.3ms)
+
+
+Started GET "/" for ::1 at 2020-07-10 13:16:28 -0300
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (3.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 176ms (Views: 158.6ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/" for ::1 at 2020-07-10 13:18:48 -0300
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (6.8ms)
+Completed 500 Internal Server Error in 118ms (ActiveRecord: 0.9ms)
+
+
+  
+SyntaxError (C:/Users/Sobral/Desktop/Dados para brincarmos/Ruby on Rails/blogpost/app/views/layouts/application.html.erb:6: unknown regexp options - tackpath
+...t_link_tag    https://stackpath.bootstrapcdn.com/bootstrap/4...
+...                     ^~~~~~~~~~
+C:/Users/Sobral/Desktop/Dados para brincarmos/Ruby on Rails/blogpost/app/views/layouts/application.html.erb:6: unexpected fraction part after numeric literal
+...ootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css );@out...
+...                             ^~
+):
+  
+app/views/layouts/application.html.erb:6: unknown regexp options - tackpath
+app/views/layouts/application.html.erb:6: unexpected fraction part after numeric literal
+Started GET "/" for ::1 at 2020-07-10 13:19:34 -0300
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 336ms (Views: 322.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2020-07-10 13:22:08 -0300
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 249ms (Views: 210.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/posts/new" for ::1 at 2020-07-10 13:22:28 -0300
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 234ms (Views: 212.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-07-10 13:38:25 -0300
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (31.7ms)
+Completed 200 OK in 1141ms (Views: 1065.0ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/posts/new" for ::1 at 2020-07-10 13:38:48 -0300
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (151.6ms)
+Completed 200 OK in 430ms (Views: 402.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for ::1 at 2020-07-10 13:38:53 -0300
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uH/8NdCeJGaHND7S51jJ0D4LLJyrWGgSACHCg3Ow6icprKoDb7rtD0vwaHdhi7x7yCig81qO4HwfF+pmY3w+DA==", "post"=>{"title"=>"123", "body"=>"sss"}, "commit"=>"Save Post"}
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (6.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "123"], ["body", "sss"], ["created_at", "2020-07-10 16:38:54.197691"], ["updated_at", "2020-07-10 16:38:54.197691"]]
+  [1m[35m (57.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 635ms (ActiveRecord: 68.0ms)
+
+
+Started GET "/" for ::1 at 2020-07-10 13:38:54 -0300
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (2.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (29.4ms)
+Completed 200 OK in 249ms (Views: 234.7ms | ActiveRecord: 2.3ms)
+
+

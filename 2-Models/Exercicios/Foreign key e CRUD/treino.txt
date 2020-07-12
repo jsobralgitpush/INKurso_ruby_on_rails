@@ -1,0 +1,9 @@
+CRIAR 4 TELAS COM SEUS RESPECTIVOS MODELS
+  1) Produtos
+	a) Criação do Model Product - products/new
+  2) Clientes
+	a) Criação do Model Client - clients/new
+  3) Vendas
+	a) Criação do Model Sale - sales/new, com foreign key para client e product
+  4) Index: todas as vendas
+	a) Exibição de todas as vendas

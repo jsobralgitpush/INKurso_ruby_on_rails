@@ -1,0 +1,155 @@
+Para criarmos um projeto 
+-rails new "nome do projeto"
+
+*caso de um erro de SSL, precisamos fazer...
+-Entrar no gemfile do projeto e mudar de https para http
+-bundle install (para darmos este comando, precisamos da versão > 2.4 do ruby)
+https://rubyinstaller.org/downloads/
+
+
+Para iniciar o projeto
+-rails server (s)
+-este comando trará vários diretórios
+
+MVC - Model view controller
+1-rails g (generate) controller "nome do controller" 
+  ? O que é um controller
+
+2-Dentro da pasta views, será criada uma pasta com o nome do controller
+
+2.1-Dentro de controllers, teremos arquivos .rb e neles iremos codar em "ruby"
+  a) Aqui especificamos uma função como:
+  def about (este nome parece sugestivo com o nome do html.erb)
+
+  end
+
+3-Agora, podemos criar um arquivo index.html.erb e escrever como um html 
+
+4-Dentro de config, entramos em routes.rb...Lá teremos algo como...
+  "you can have the root of your...
+  (descomentamos)   root '"nome do controller"#"nome do arquivo"' - no caso index ('foo#123')
+
+4.1-Caso queiramos escrever uma rota qualquer, dentro de config/routes.rb
+  get 'nome da rota' => '"nome do controller"#"nome da view criada"' 
+
+5-Dentro do arquivo html.erb, podemos trazer variáveis das views, fazendo
+  a) Dentro da view:
+    def about
+      @tittle = '';
+      @content = '';
+    end 
+  
+  b) Dentro do arquivo html.erb
+  <h1><%= @tittle %></h1>
+  <p></p>
+
+6-Podemos criar varios métodos dentro do controller "post" (por exemplo)...para isso fazemos:
+  a) Dentro do arquivo routes.rb terá um trecho do código que diz...
+  "#Example resource route..."
+  resource :posts
+
+  b) Dando um "rake routes" no cmd, podemos ver todas as rotas que nossa aplicação possui. Com o passo anterior, percebemos que o controller
+"posts", ganhou várias rotas. Além disso, ele estas rotas serão auto explicativas, do tipo
+    I) GET /posts/new   posts#new
+
+  c) Com isso, dentro do Controller de post (post_controller.rb), podemos criar o algoritmo por tras do metodo criado
+    def new
+
+    end
+
+  d) Depois, dentro de views/posts podemos criar um arquivo new.html.erb e definir a "cara" em html dessa rota.
+    I) O ruby possui pré layouts de forms, e uma sintax de exemplo seria:
+
+      <%= form_for :post, url: post_path do |f| %>  #Esse "url:" diz para onde o botão submit nos levará
+                                                    #Contudo, por que usamos "post_path" não está claro, mas parece que
+                                                    vamos para a rota de /posts
+
+      (a indentação é importante, pois é como se fizemos um "for f in form" no python)
+
+        <p>
+          <% = f.label :title  %>
+          <% = f.text_field :title  %>    #Percebe-se que a '#' da o tom do tipo de entrada
+        </p>
+
+        <p>
+          <% = f.label :body  %>
+          <% = f.text_area :body  %>      #Percebe-se que a '#' da o tom do tipo de entrada
+        </p>
+
+        <p>
+          <% f.submit %>
+        </p> 
+
+    II) Assim que apertamos "submit", iremos gerar um dado e precisaremos fazer uma conexão com um DB. Por default, 
+    o ruby usa um arquivo sqlite setado em config/database.yml 
+
+7-Agora teremos que criar um model para comportar esta entrada gerada na rota posts/new: 
+  a) CMD: rails g model Post tittle:string body:text  #Nome singular para controllers e plural para models
+
+  b) A tabela post ainda não foi criada, para isso fazemos:
+    I) rake db:migrate
+
+  c) Agora dentro de controllers/post_controller.rb
+    def create      #O nome "create" vem de onde? Se mudarmos, quais as consequências?
+      @post = Post (nome do model).new(params[:post])   #Quem é post?
+    end
+  
+  d) Se tentarmos criar um post em posts/new, teremos um erro de permissão...para resolver isso fazemos em controllers/post_controller.rb:
+    I) private def post_params
+        params.require(:post).permit(:tittle, :body)
+       end
+
+    II) Além disso, mudamos a função create para...
+    def create
+      @post = Post.new(post_params)
+
+      @post.save
+      redirect_to @post 
+    end
+
+8-O último ponto II escrito, faz com que o submit nos leve para a rota /posts. Agora podemos fazer com que haja uma rota que mostremos todos os 
+nossos posts, criando uma view chamada "show". Para isso 
+  a) Vamos criar uma função "show" em post_controller.rb  #Poderia ser qualquer nome?
+    def show
+      @post = Post.find(params[:id])
+    end
+  
+  b) Vamos criar uma view chamada show.html.erb
+    <h2><%= @post.tittle %</h2>
+    <p><%= @post.body</p>
+
+  c) Com isso, quando criarmos um post, iremos direto para a rota /posts/id_do_post. Com o single post criado
+
+  d) Caso queiramos mostrar todos os posts, ao invés de só um, fazemos:
+    def index
+      @posts = Post.all       #Por que "posts" no plural? 
+    end
+
+  f) Dentro de index.html.erb, fazemos
+  <h1>Blog Posts</h1>
+  <% @posts.each do |post| %>       #Esse |post| poderia ser qualquer coisa, como "i" do for em python
+    <h3><%= post.tittle %></h3>     #Parece que o sinal de "=" diz que trazemos uma variável enquanto sem o "=" trazemos uma 'função' ou 'método'
+    <p><%= post.body %></p>                                    
+  <% end %>
+
+COM ISSO TERMINAMOS A NOSSA LÓGICA POR TRÁS DO ALGORTIMO 
+===================================================
+AGORA VAMOS CONECTAR AO BOOTSTRAP PARA DEIXAR ESTA TELA MAIS BONITA :)
+
+1-Na página principal do bootstrap, pegamos o link
+  https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css
+
+2-Agora em views/layouts/application.html.erb, colocamos este link, da seguinte forma
+  <title>Simpleblog</tittle>
+  <%= stylesheet_link_tag 'colar link do boostrap %>      #Terao outros 'stylesheets', pode deixa-los e copia um novo no início
+
+3-Agora temos as configurações básicas do bootstrap. Podemos então carregar templates da seguinte forma
+  a) Na página inicial do bootstrap, vamos getting started, e escolhemos um templates
+  b) Damos um ctrl + u para inspecionar o html.
+  c) copiamos todo o "<nav>" tag
+  d) Colamos ele em index.html.erb, dentro do "body" acima de <%= yield %>
+  f) Agora podemos fazer alguma alterações no nome e em outras infos do arquivo. 
+    I) Aqui temos várias modificações, vale ver o vídeo para fazer esse set up (min 33)
+
+
+

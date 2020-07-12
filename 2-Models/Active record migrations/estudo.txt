@@ -1,0 +1,126 @@
+"Migrations are a convenient way to alter your database schema over time in a consistent and easy way"
+
+Exemplo:
+
+  ===========================================================
+  Arquivo localizado dentro da pasta db/migrate
+
+    class CreateProducts < ActiveRecord::Migration[5.0]
+      def change
+        create_table :products do |t|
+          t.string :name
+          t.text :description
+    
+          t.timestamps
+        end
+      end
+    end
+
+  *O timestamp irá gerar duas colunas
+    a) created_at
+    b) updated_at
+
+  *Além de change, podemos usar outros métodos como "up" e "down" (não sei qual a diferença ainda)
+  ===========================================================
+
+Criando migrações...
+
+  a) Podemos mudar o schema, rodando
+      $ rails generate migration AddPartNumberToProducts part_number:string
+      
+      Ele irá entender que esta migration serve para adicionarmos uma coluna 'part_number' ao model
+      "Products", gerando uma migrate
+
+        ...reflexo no arquivo da migrate...
+
+        class AddPartNumberToProducts < ActiveRecord::Migration[5.0]
+          def change
+            add_column :products, :part_number, :string
+          end
+        end
+
+
+      *Podemos de maneira similar escrevermos um "RemoveColumnFromTable"
+
+  b) Para criarmos uma tabela
+      $ rails generate migration CreateProducts name:string part_number:string
+
+      ...reflexo no arquivo da migrate... 
+      
+        class CreateProducts < ActiveRecord::Migration[5.0]
+          def change
+            create_table :products do |t|
+              t.string :name
+              t.string :part_number
+            end
+          end
+        end
+
+  c) Adicionando uma foreign key
+      $ rails generate migration AddUserRefToProducts user:references
+
+      ...reflexo no arquivo da migrate... 
+
+          class AddUserRefToProducts < ActiveRecord::Migration[5.0]
+            def change
+              add_reference :products, :user, foreign_key: true
+            end
+          end
+
+  d) Dando um join nas tabelas
+      $ rails g migration CreateJoinTableCustomerProduct customer product
+
+      ...reflexo no arquivo da migrate...
+
+      class CreateJoinTableCustomerProduct < ActiveRecord::Migration[5.0]
+        def change
+          create_join_table :customers, :products do |t|
+            # t.index [:customer_id, :product_id]
+            # t.index [:product_id, :customer_id]
+          end
+        end
+      end
+
+    
+Comando para gerar models...
+
+     $ rails generate model Product name:string description:text
+
+     ...reflexo no arquivo da migrate...
+
+      class CreateProducts < ActiveRecord::Migration[5.0]
+        def change
+          create_table :products do |t|
+            t.string :name
+            t.text :description
+      
+            t.timestamps
+          end
+        end
+      end
+
+Podemos também gerar models sem usar cmd, usando sintaxes no arquivo de migrate como...
+
+    a) 
+      create_table :products do |t|
+        t.string :name
+      end
+
+    b) 
+      create_join_table :products, :categories
+
+    #Isso fica dentro da função "change" do migrate?
+      -exatamente :) 
+      -também podemos usar o método "up" ou "down"
+        i) no "up" sugerimos alterações e no "down" revertermos essas alterações
+
+Podemos fazer alterações nas tabelas usando...
+
+
+    change_table :products do |t|
+      t.remove :description, :name
+      t.string :part_number
+      t.index :part_number
+      t.rename :upccode, :upc_code
+    end
+

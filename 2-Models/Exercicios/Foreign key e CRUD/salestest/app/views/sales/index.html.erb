@@ -1,0 +1,6 @@
+<h1>Sales</h1>
+<% Sale.all.each do |sale| %>
+  <h3><%= sale.amount %></h3>
+  <p><%= sale.client_id %> - <%= Client.find_by(id: sale.client_id).name %></p>
+  <p><%= sale.product_id %> - <%= Product.find_by(id: sale.product_id).name %></p>
+<% end %>

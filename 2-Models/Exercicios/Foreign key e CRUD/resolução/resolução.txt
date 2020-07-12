@@ -1,0 +1,85 @@
+Produtos
+a) Gerar o controller
+  rails g controller products
+  
+
+b) Criar uma view chamada index.html.erb (OPCIONAL)
+
+c) Cria o model
+  rails generate model Client name:string email:text
+
+d) Configurar o route.rb 
+  i)root 'products#index' (nome do controller minusculo)
+
+  ii) resource :products
+
+  iii) cmd: rake routes
+
+e) Agora dentro do arquivo product_controller.rb 
+      def new
+      end
+
+      def create
+        @product = Product.new(post_params)
+
+        @product.save
+        redirect_to action: "index"  
+      end
+
+      private def post_params
+        params.require(:product).permit(:name, :description)
+      end
+  
+  i) Além disso, criamos um arquivo new.html.erb dentro da pasta views/product
+    <h1>Add Product</h1>
+    <%= form_for :product, url: products_path do |f| %>
+      <p>
+        <%= f.label :name  %>
+        <%= f.text_field :name  %>
+      </p>
+
+      <p>
+        <%= f.label :description  %>
+        <%= f.text_area :description  %>    
+      </p>
+
+      <p>
+        <%= f.submit %> 
+      </p> 
+
+    <% end %>
+
+  ***OBS***
+  Para darmos um redirect_to para paginas de outro controller
+    redirect_to :controller => 'products', :action => 'index'
+
+f) Precisamos fazer a migration
+  rails db:migrate RAILS_ENV=development
+
+Clientes
+*mesmo processo
+
+Vendas
+c) Criar o model
+  rails generate model Sale amount:integer client:references product:references
+
+
+d) Mexer no arquivo routes
+  get 'sales/new' => 'sales#new'
+  post 'sales/new' => 'sales#create'
+e)
+  i) Para criarmos um select com os dados de outras tabelas
+  
+    <p>
+      <%= f.label :client_id %>
+      <%= f.select :client_id, options_for_select(Client.all.map{|s|[s.name, s.id]}) %>
+    </p>
+
+    <p>
+      <%= f.label :product_id  %>
+      <%= f.select :product_id, options_for_select(Product.all.map{|s|[s.name, s.id]}) %>
+    </p>
+
+***MUITO IMPORTANTE***
+Model = Maiusculo no singular
+Controller = minusculo no plural
