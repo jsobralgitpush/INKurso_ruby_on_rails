@@ -1,0 +1,22 @@
+<h1>Add Sales</h1>
+<%= form_for :sale, url: sales_new_path  do |f| %>
+  <p>
+    <%= f.label :amount  %>
+    <%= f.text_field :amount  %>
+  </p>
+
+  <p>
+    <%= f.label :client_id %>
+    <%= f.select :client_id, options_for_select(Client.all.map{|s|[s.name, s.id]}) %>
+  </p>
+
+  <p>
+    <%= f.label :product_id  %>
+    <%= f.select :product_id, options_for_select(Product.all.map{|s|[s.name, s.id]}) %>
+  </p>
+
+  <p>
+    <%= f.submit %> 
+  </p> 
+
+<% end %>

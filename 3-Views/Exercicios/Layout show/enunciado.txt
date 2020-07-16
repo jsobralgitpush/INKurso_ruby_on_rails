@@ -1,0 +1,5 @@
+EXPOSIÇÃO DE PRODUTOS
+
+1-Criar um model para guardar peças de roupas com suas respectivas imgs
+2-Criar uma exposição para estas images na rota cloths/index
+3-Criar um search bar que pesquise com critério LIKE pelo nome da peça

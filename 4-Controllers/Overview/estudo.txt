@@ -1,0 +1,140 @@
+Controller - "C" do MVC
+
+Em poucas palavras, o controller é uma excelente forma de manusearmos requisições do usuário
+e criarmos novos variáveis e algoritmos
+
+Controller Client (exemplo)
+
+class ClientsController < ApplicationController
+  def new
+
+  *Tudo que for instanciado aqui, poderá ser usado na view referente a esta rota
+  **A princípio, sera algo como clients/new a não ser que apontemos em outra direção
+
+  end
+end
+
+
+1-Paramêtros de requisição
+  a) Tipos de parâmetros
+    i) Query string - tudo que vem depois de "?" na rota
+    ii) POST method
+
+    ...exemplo...
+    
+    ==========================================================================
+    class ClientsController < ApplicationController
+      # This action uses query string parameters because it gets run
+      # by an HTTP GET request, but this does not make any difference
+      # to the way in which the parameters are accessed. The URL for
+      # this action would look like this in order to list activated
+      # clients: /clients?status=activated
+      def index
+        if params[:status] == "activated"
+          @clients = Client.activated
+        else
+          @clients = Client.inactivated
+        end
+      end
+    
+      # This action uses POST parameters. They are most likely coming
+      # from an HTML form which the user has submitted. The URL for
+      # this RESTful request will be "/clients", and the data will be
+      # sent as part of the request body.
+      def create
+        @client = Client.new(params[:client])
+        if @client.save
+          redirect_to @client
+        else
+          # This line overrides the default rendering behavior, which
+          # would have been to render the "create" view.
+          render "new"
+        end
+      end
+    end
+    ==========================================================================
+
+  b) Hash and Array Paramaters
+
+  ...exemplo....
+
+  ===========================================================================
+
+  <form accept-charset="UTF-8" action="/clients" method="post">
+    <input type="text" name="client[name]" value="Acme" />
+    <input type="text" name="client[phone]" value="12345" />
+    <input type="text" name="client[address][postcode]" value="12345" />
+    <input type="text" name="client[address][city]" value="Carrot City" />
+  </form>
+
+  When this form is submitted, the value of params[:client] will be { "name" => "Acme", "phone" => "12345", "address" => { "postcode" => "12345", "city" => "Carrot City" } }
+
+  ===========================================================================
+
+  c) JSON Paramaters
+
+  So for example, if you are sending this JSON content:
+
+    { "company": { "name": "acme", "address": "123 Carrot Street" } }
+
+  Your controller will receive params[:company] as { "name" => "acme", "address" => "123 Carrot Street" }.
+
+
+  d) Routing Paramaters
+
+  (nebuloso, vamos esperar a prática)
+
+  d) Strong Paramaters
+
+  ...exemplo....
+
+  ===========================================================================
+  
+  class PeopleController < ActionController::Base
+    # This will raise an ActiveModel::ForbiddenAttributesError exception
+    # because it's using mass assignment without an explicit permit
+    # step.
+    def create
+      Person.create(params[:person])
+    end
+  
+    # This will pass with flying colors as long as there's a person key
+    # in the parameters, otherwise it'll raise an
+    # ActionController::ParameterMissing exception, which will get
+    # caught by ActionController::Base and turned into a 400 Bad
+    # Request error.
+    def update
+      person = current_account.people.find(params[:id])
+      person.update!(person_params)
+      redirect_to person
+    end
+  
+    private
+      # Using a private method to encapsulate the permissible parameters
+      # is just a good pattern since you'll be able to reuse the same
+      # permit list between create and update. Also, you can specialize
+      # this method with per-user checking of permissible attributes.
+      def person_params
+        params.require(:person).permit(:name, :age)
+      end
+  end  
+
+  ===========================================================================
+
+2-Session
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
