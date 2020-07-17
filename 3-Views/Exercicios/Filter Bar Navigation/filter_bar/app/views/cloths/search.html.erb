@@ -1,0 +1,112 @@
+<%= render "header" %>
+
+<div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row">
+
+          <div class="col-md-4">
+            <div class="mb-4-box-shadow"> 
+                <div class="card-body">
+      
+                    <h6 class="font-weight-bold">Genero</h6>
+
+                    <div class="form-check pl-0 mb-3">
+                      <input id="reserva" type="checkbox" class="filter-option form-check-input filled-in center 1" />
+                      <label class="form-check-label small text-uppercase card-link-secondary" for="34">Masculino</label>
+                    </div>
+
+                    <div class="form-check pl-0 mb-3">
+                      <input size="36" type="checkbox" class="filter-option form-check-input filled-in" id="36"/>
+                      <label class="form-check-label small text-uppercase card-link-secondary" for="36">Feminino</label>
+                    </div>
+
+                    <div class="form-check pl-0 mb-3">
+                      <input size="36" type="checkbox" class="filter-option form-check-input filled-in" id="36"/>
+                      <label class="form-check-label small text-uppercase card-link-secondary" for="36">Indefinido</label>
+                    </div>
+
+                </div>
+            </div>          
+          </div>
+
+          <div class="col-md-4">
+            <div class="mb-4-box-shadow">
+                <div class="card-body">
+      
+                    <h6 class="font-weight-bold">Tipo</h6>
+
+                    <div class="form-check pl-0 mb-3">
+                      <input size="34" type="checkbox" class="filter-option form-check-input filled-in" id="34"/>
+                      <label class="form-check-label small text-uppercase card-link-secondary" for="34">Camiseta</label>
+                    </div>
+
+                    <div class="form-check pl-0 mb-3">
+                      <input size="36" type="checkbox" class="filter-option form-check-input filled-in" id="36"/>
+                      <label class="form-check-label small text-uppercase card-link-secondary" for="36">Calça</label>
+                    </div>
+
+                </div>
+            </div>          
+          </div>
+
+          <div class="col-md-4">
+            <div class="mb-4-box-shadow">
+                <div class="card-body">
+      
+                    <h6 class="font-weight-bold">Preço</h6>
+
+                    <div class="form-check pl-0 mb-3">
+                      <input size="34" type="checkbox" class="filter-option form-check-input filled-in" id="34"/>
+                      <label class="form-check-label small text-uppercase card-link-secondary" for="34">Menor que R$100</label>
+                    </div>
+
+                    <div class="form-check pl-0 mb-3">
+                      <input size="36" type="checkbox" class="filter-option form-check-input filled-in" id="36"/>
+                      <label class="form-check-label small text-uppercase card-link-secondary" for="36">Entre R$100 e R$200</label>
+                    </div>
+
+                    <div class="form-check pl-0 mb-3">
+                      <input size="36" type="checkbox" class="filter-option form-check-input filled-in" id="36"/>
+                      <label class="form-check-label small text-uppercase card-link-secondary" for="36">Maior que R$200</label>
+                    </div>
+
+                </div>
+            </div>          
+          </div>
+
+      </div>
+    </div>
+</div>
+
+
+
+<div class="album py-5 bg-light">
+    <div class="row">
+
+      <% @results.each do |cloth| %>
+
+        <div class="col-md-4">
+          <div class="card mb-4-box-shadow">
+            <%= image_tag( cloth.url, class: "card-img-top") %>
+            <div class="card-body">
+              <h4><%= cloth.name %></h4>
+              <p class="card-text">História da Camiseta</p>
+            </div>
+          </div>
+        </div>
+      
+      <% end %>
+
+    </div>
+</div>
+      
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+$(document).ready(function(){
+    $("#reserva").click(function() {
+        $("#reserva").not(this).prop('checked', false);
+    });
+});
+</script>
+

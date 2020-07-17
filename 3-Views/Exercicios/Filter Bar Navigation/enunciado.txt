@@ -1,0 +1,123 @@
+FILTER BAR
+
+1-Colocar mais atributos dentro do Model Cloth
+  a) Genero
+  b) Preço
+
+  Tutorial
+    1-rails g migration AddColumnToTable
+    2-  
+        add_column :cloths, :gender, :string
+        add_column :cloths, :price, :integer
+
+    3-rails db:migrate RAILS_ENV=development
+
+2-Criar a barra de filtro na lateral da página e filtrar por
+  a) Style
+    i) Camiseta
+    ii) Calça
+  b) Genero 
+    i) Masc
+    ii) Fem 
+    iii) Indefinido
+  c) Preço
+
+<div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row">
+
+          <div class="col-md-4">
+            <div class="mb-4-box-shadow"> 
+                <div class="card-body">
+      
+                    <h6 class="font-weight-bold">Genero</h6>
+
+                    <div class="form-check pl-0 mb-3">
+                      <input size="34" type="checkbox" class="filter-option form-check-input filled-in center" id="34"/>
+                      <label class="form-check-label small text-uppercase card-link-secondary" for="34">Masculino</label>
+                    </div>
+
+                    <div class="form-check pl-0 mb-3">
+                      <input size="36" type="checkbox" class="filter-option form-check-input filled-in" id="36"/>
+                      <label class="form-check-label small text-uppercase card-link-secondary" for="36">Feminino</label>
+                    </div>
+
+                    <div class="form-check pl-0 mb-3">
+                      <input size="36" type="checkbox" class="filter-option form-check-input filled-in" id="36"/>
+                      <label class="form-check-label small text-uppercase card-link-secondary" for="36">Indefinido</label>
+                    </div>
+
+                </div>
+            </div>          
+          </div>
+
+          <div class="col-md-4">
+            <div class="mb-4-box-shadow">
+                <div class="card-body">
+      
+                    <h6 class="font-weight-bold">Tipo</h6>
+
+                    <div class="form-check pl-0 mb-3">
+                      <input size="34" type="checkbox" class="filter-option form-check-input filled-in" id="34"/>
+                      <label class="form-check-label small text-uppercase card-link-secondary" for="34">Camiseta</label>
+                    </div>
+
+                    <div class="form-check pl-0 mb-3">
+                      <input size="36" type="checkbox" class="filter-option form-check-input filled-in" id="36"/>
+                      <label class="form-check-label small text-uppercase card-link-secondary" for="36">Calça</label>
+                    </div>
+
+                </div>
+            </div>          
+          </div>
+
+          <div class="col-md-4">
+            <div class="mb-4-box-shadow">
+                <div class="card-body">
+      
+                    <h6 class="font-weight-bold">Preço</h6>
+
+                    <div class="form-check pl-0 mb-3">
+                      <input size="34" type="checkbox" class="filter-option form-check-input filled-in" id="34"/>
+                      <label class="form-check-label small text-uppercase card-link-secondary" for="34">Menor que R$100</label>
+                    </div>
+
+                    <div class="form-check pl-0 mb-3">
+                      <input size="36" type="checkbox" class="filter-option form-check-input filled-in" id="36"/>
+                      <label class="form-check-label small text-uppercase card-link-secondary" for="36">Entre R$100 e R$200</label>
+                    </div>
+
+                    <div class="form-check pl-0 mb-3">
+                      <input size="36" type="checkbox" class="filter-option form-check-input filled-in" id="36"/>
+                      <label class="form-check-label small text-uppercase card-link-secondary" for="36">Maior que R$200</label>
+                    </div>
+
+                </div>
+            </div>          
+          </div>
+
+      </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+=============================================================
+
+1-Colocar mais atributos dentro do Model Cloth
+  a) Genero
+  b) Preço
+
+2-Criar a barra de filtro na lateral da página e filtrar por
+  a) Style
+    i) Camiseta
+    ii) Calça
+  b) Genero 
+    i) Masc
+    ii) Fem 
+    iii) Indefinido
+  c) Preço - slide bar

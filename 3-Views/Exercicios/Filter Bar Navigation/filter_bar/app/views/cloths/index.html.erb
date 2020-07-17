@@ -1,0 +1,21 @@
+<%= render "header" %>
+
+<div class="album py-5 bg-light">
+    <div class="row">
+
+      <% Cloth.all.each do |cloth| %>
+
+        <div class="col-md-3">
+          <div class="card mb-3-box-shadow">
+            <%= image_tag( cloth.url, class: "card-img-top") %>
+            <div class="card-body">
+              <h4><%= cloth.name %></h4>
+              <p class="card-text">História da Camiseta</p>
+            </div>
+          </div>
+        </div>
+      
+      <% end %>
+
+    </div>
+</div>
