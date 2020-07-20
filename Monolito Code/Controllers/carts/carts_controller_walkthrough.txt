@@ -1,0 +1,106 @@
+1)
+"""
+  before_action :authenticate_user!, only: %i(checkout_address checkout_pagamento)
+  before_action :check_cart, except: %i(add_product)
+  before_action :fetch_cep, only: %i(show checkout_address)
+  before_action :set_return_page, only: %i(show checkout_address checkout_pagamento)
+  before_action :set_pixel, only: %i(checkout_address checkout_pagamento), if: proc { current_visit&.originates_on_platform? }
+"""
+
+***Sintaxe
+  -Por que usamos before_action tantas vezes?
+
+2)
+"""
+layout 'checkout', except: :show
+"""
+
+***Sintaxe
+  -o que "except" diz?
+  -checkout é uma view do controller cart?
+
+3)
+"""
+def show
+    cep = @cart.cep || session[:cep]
+    @delivery_options = Shipping::GetDeliveryOptions.call(@cart, cep) if cep.present?
+
+    if @delivery_options.blank? && cep.present?
+      flash[:error] = 'Verifique seu cep e tente novamente.'
+    elsif @cart.nil?
+      flash[:error] = 'Seu carrinho de compras está vazio.'
+      if current_visit&.originates_on_platform?
+        redirect_to store_path(current_visit.store)
+      else
+        redirect_to root_path
+      end
+    end
+  end
+
+"""
+
+***sintaxe
+  -cep = @cart.cep -> nem chamamos @cart
+  -@delivery_options = Shipping::GetDeliveryOptions.call(@cart, cep) if cep.present? -> sintaxe muito nebolusa
+  -'if current_visit&' -> o que o & comercial faz aqui?
+  -'redirect_to store_path(current_visit.store)' -> damos um redirect para uma rota com um parâmetro?
+
+4)
+"""
+  def add_product
+    if @cart.nil?
+      user_id = current_user ? current_user.id : nil
+      @cart = Cart.create(user_id: user_id)
+      session[:cart_id] = @cart.id
+      current_user&.update(unfinished_cart_id: @cart.id)
+    end
+    uc = AddProductToCart.new(cart_id: @cart.id, product_info: params).exec
+    @cart = uc.cart
+
+    Coupon::AutoApply.new(@cart).auto_apply unless @cart.errors.any?
+    Coupon::AutoRemoveInvalid.new(@cart).auto_remove
+
+    flash[:error] = uc.errors.first unless uc.ok?
+    flash[:notice] = 'Produto adicionado ao seu carrinho de compras'
+    redirect_to cart_path(params[:product_id])
+  end
+"""
+
+***sintaxe
+  -uc = AddProductToCart.new(cart_id: @cart.id, product_info: params).exec -> mais uma vez usamos
+uma variável (@cart) sem te-la chamado
+  -quem é .exec? 
+  -O que a sintaxe do Coupon faz?
+  
+5)
+"""
+def remove_product
+    @uc = RemoveProductFromCart.new(cart_id: @cart.id,
+                                    product_id: params[:product_id]).exec
+    @cart = @uc.cart
+    @item = @uc.product
+
+    Coupon::AutoApply.new(@cart).auto_apply unless @cart.errors.any?
+    Coupon::AutoRemoveInvalid.new(@cart).auto_remove
+
+    if @uc.ok?
+      if @cart.items_count <= 0
+        @cart.destroy
+        session[:cart_id] = nil
+        current_user&.update(unfinished_cart_id: nil)
+      end
+      flash[:notice] = 'Produto removido do carrinho =/'
+      redirect_to request.referer
+    elsif @item.nil?
+      redirect_to cart_path(':)')
+    else
+      render :update_cart_error
+    end
+  end
+"""
+
+***sintaxe
+  -RemoveProductFromCart está em um useCases 
+
+
+

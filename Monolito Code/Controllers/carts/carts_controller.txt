@@ -1,0 +1,200 @@
+class CartsController < ApplicationController
+  before_action :authenticate_user!, only: %i(checkout_address checkout_pagamento)
+  before_action :check_cart, except: %i(add_product)
+  before_action :fetch_cep, only: %i(show checkout_address)
+  before_action :set_return_page, only: %i(show checkout_address checkout_pagamento)
+  before_action :set_pixel, only: %i(checkout_address checkout_pagamento), if: proc { current_visit&.originates_on_platform? }
+
+  layout 'checkout', except: :show
+
+  def show
+    cep = @cart.cep || session[:cep]
+    @delivery_options = Shipping::GetDeliveryOptions.call(@cart, cep) if cep.present?
+
+    if @delivery_options.blank? && cep.present?
+      flash[:error] = 'Verifique seu cep e tente novamente.'
+    elsif @cart.nil?
+      flash[:error] = 'Seu carrinho de compras está vazio.'
+      if current_visit&.originates_on_platform?
+        redirect_to store_path(current_visit.store)
+      else
+        redirect_to root_path
+      end
+    end
+  end
+
+  def add_product
+    if @cart.nil?
+      user_id = current_user ? current_user.id : nil
+      @cart = Cart.create(user_id: user_id)
+      session[:cart_id] = @cart.id
+      current_user&.update(unfinished_cart_id: @cart.id)
+    end
+    uc = AddProductToCart.new(cart_id: @cart.id, product_info: params).exec
+    @cart = uc.cart
+
+    Coupon::AutoApply.new(@cart).auto_apply unless @cart.errors.any?
+    Coupon::AutoRemoveInvalid.new(@cart).auto_remove
+
+    flash[:error] = uc.errors.first unless uc.ok?
+    flash[:notice] = 'Produto adicionado ao seu carrinho de compras'
+    redirect_to cart_path(params[:product_id])
+  end
+
+  def update
+    @item = @cart.itens.select { |i| i[:id] == params[:order_id] }.first
+  end
+
+  def update_cart
+    @cart.update_attribute(:user_id, current_user.id) if current_user
+    @cart = UpdateCart.new(cart_id: @cart.id, params: cart_params).exec
+
+    if @cart.errors.any?
+      flash.now[:notice] = @cart.errors.full_messages.first
+      render :update_cart_error
+    else
+      @cart.save
+      redirect_to request.referer
+    end
+  end
+
+  def calculate_shipping
+    Shipping::SetCartShippingCost.call(@cart, @cart.cep) if @cart.cep
+  end
+
+  def remove_coupon
+    @uc = RemoveCouponFromCart.new(cart_id: @cart.id).exec
+    @cart = @uc.cart
+
+    if @uc.ok?
+      render :update_cart
+    else
+      render :update_cart_error
+    end
+  end
+
+  def remove_product
+    @uc = RemoveProductFromCart.new(cart_id: @cart.id,
+                                    product_id: params[:product_id]).exec
+    @cart = @uc.cart
+    @item = @uc.product
+
+    Coupon::AutoApply.new(@cart).auto_apply unless @cart.errors.any?
+    Coupon::AutoRemoveInvalid.new(@cart).auto_remove
+
+    if @uc.ok?
+      if @cart.items_count <= 0
+        @cart.destroy
+        session[:cart_id] = nil
+        current_user&.update(unfinished_cart_id: nil)
+      end
+      flash[:notice] = 'Produto removido do carrinho =/'
+      redirect_to request.referer
+    elsif @item.nil?
+      redirect_to cart_path(':)')
+    else
+      render :update_cart_error
+    end
+  end
+
+  def checkout_address
+    @address = Address.new(cep: @cart.cep, name: current_user.name)
+    @addresses = current_user.addresses.where(deleted_at: nil).order('created_at DESC')
+    @cart.update!(user: current_user)
+  end
+
+  def checkout_address_save
+    AddAddressToCart.new(
+      cart: @cart, params: params[:cart]
+    ).exec
+
+    if @cart.errors.any?
+      flash[:error] = @cart.errors.full_messages.first
+      redirect_to checkout_step1_path
+    else
+      redirect_to checkout_step2_path
+    end
+  end
+
+  def checkout_pagamento
+    @addresses = current_user.addresses.where(deleted_at: nil).order('created_at DESC')
+
+    @cart.cep = @cart.shipping_address.cep
+    @cart.save
+
+    Shipping::SetCartShippingCost.call(@cart, @cart.shipping_address.cep)
+    load_user_balance
+  end
+
+  def checkout_pagamento_process
+    if billing_address_different_from_shipping_address?
+      @cart.update_attribute(:billing_address, Address.find(params[:payment][:billing_address]))
+    end
+
+    @cart.update_attribute(:billing_cpf, params[:payment][:cpf])
+
+    @uc = PayCart.new(
+      cart_id: @cart.id,
+      params: params,
+      visit: current_visit,
+      aff_tag: cookies[:aff_tag],
+    ).exec
+
+    load_user_balance
+
+    if @uc.ok? && @uc.order.present?
+      session[:cart_id] = nil
+      current_user&.update(unfinished_cart_id: nil)
+      redirect_to payment_confirmation_path(@uc.order)
+    else
+      flash[:error] = @uc.errors&.first
+      redirect_to checkout_step2_path
+    end
+  end
+
+  private
+
+  def set_return_page
+    referer_url = Rails.application.routes.recognize_path(request.referrer)
+    controller = referer_url[:controller]
+    action = referer_url[:action]
+    if (controller == 'stores' && action == 'index') || (controller == 'stores/products' && action == 'show')
+      @return_page = store_path(referer_url[:store_id])
+    else
+      @return_page = mais_vendidas_path
+    end
+  end
+
+  def check_cart
+    if @cart.nil? || @cart.items_count <= 0
+      flash[:error] = 'Seu carrinho de compras está vazio.'
+      if current_visit&.originates_on_platform?
+        redirect_to store_path(current_visit.store)
+      else
+        redirect_to root_path
+      end
+    end
+  end
+
+  def load_user_balance
+    @balance = current_user.current_balance
+  end
+
+  def cart_params
+    params.require(:cart).permit(
+      :cep,
+      :shipping_type,
+      coupon: [:code],
+      items: %i(id quantity)
+    )
+  end
+
+  def fetch_cep
+    @cart.cep ||= session[:cep] if @cart
+  end
+
+  def billing_address_different_from_shipping_address?
+    params[:payment][:billing_address].present? &&
+      params[:payment][:billing_address] != @cart.billing_address_id
+  end
+end

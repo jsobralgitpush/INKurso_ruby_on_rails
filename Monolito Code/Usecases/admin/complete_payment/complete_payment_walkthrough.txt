@@ -1,0 +1,7 @@
+1)
+"""
+payment.status = ARTIST_PAYMENT::PAID
+"""
+
+***sintaxe
+  -O que esta sintaxe diz?

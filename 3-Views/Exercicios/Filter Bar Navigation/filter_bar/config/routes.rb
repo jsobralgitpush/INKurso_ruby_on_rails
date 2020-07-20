@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   post 'cloths/new' => 'cloths#create'
   get 'cloths/index' => 'cloths#index'
   get 'cloths/search' => 'cloths#search', :as => 'search_page_cloth'
+  get 'cloths/filter' => 'cloths#filter', :as => 'filter_cloth'
 
   get 'sales/search' => 'sales#search', :as => 'search_page'
 end

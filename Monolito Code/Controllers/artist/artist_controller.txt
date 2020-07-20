@@ -1,0 +1,100 @@
+# frozen_string_literal: true
+
+class ArtistsController < ApplicationController
+  layout :determine_layout
+
+  def index
+    @artists = Artist.where('sales_count > ?', 0)
+      .order('recent_sales_count DESC', 'sales_count DESC', 'created_at DESC')
+    q = "%#{params[:q]}%"
+    @artists = @artists.where('name ILIKE ? OR nickname ILIKE ?', q, q) if params[:q].present?
+    @artists = @artists.paginate(page: params[:page], per_page: 20)
+  end
+
+  def show
+    @artist = User.friendly.find(params[:id])
+    if @artist.arts.artist_page_scope.empty?
+      redirect_to user_arts_path
+    else
+      @page = params[:page] || 1
+      @arts = ArtSelector
+      .search(q: params[:search], kind: params[:kind])
+      .includes(:products)
+      .paginate(page: @page, per_page: 36)
+      # @arts = @artist.arts.artist_page_scope
+      @arts =
+        if params[:sort] == 'sales'
+          @arts.order('recent_sales_count DESC', 'sales_count DESC', 'created_at DESC')
+        elsif params[:sort] == 'recent'
+          @arts.order('created_at DESC')
+        elsif params[:filter] == 'comments'
+          nil
+        elsif params[:filter] == 'favorites'
+          Art.where(id: @artist.favorite_arts.pluck(:art_id)).order('created_at DESC')
+        else
+          @arts.order('recent_sales_count DESC', 'sales_count DESC', 'created_at DESC')
+        end
+        # @arts = @arts.includes(:products).paginate(page: @page, per_page: 36) if @arts
+      # end
+      # used by criteo onetag
+
+      # @products = @arts.map(&:products).flatten
+      @page = @page.to_i + 1
+      apply_affiliate if coming_from_external_source?
+
+      # used by criteo onetag
+      @products = @arts&.map(&:products)&.flatten&.sort_by { |p| p.sales_count }&.reverse
+    end
+  rescue ActiveRecord::RecordNotFound
+    flash[:error] = 'Rota não encontrada'
+    redirect_to root_path
+  end
+
+  def invitation
+    @artist = User.find_by reset_password_token: params[:token]
+    @arts = Art.unscoped.where(user_id: @artist.id)
+    render layout: 'checkout'
+  end
+
+  def confirm
+    @artist = User.find_by reset_password_token: params[:user][:reset_password_token]
+    @artist.password = params[:user][:password]
+    @artist.password_confirmation = params[:user][:password_confirmation]
+    @artist.name = params[:user][:name]
+    @artist.reset_password_token = nil
+    if @artist.save
+      resource = @artist
+      if resource.valid_password?(params[:user][:password])
+        sign_in :user, resource
+        redirect_to store_path(@artist.store), notice: 'Bem vindo!! :)'
+      else
+        redirect_to root_path, notice: 'Bem vindo!! :)'
+      end
+    else
+      @arts = Art.unscoped.where(user_id: @artist.id)
+      render :invitation
+    end
+  end
+
+  private
+
+  def apply_affiliate
+    cookies[:aff_tag] = { value: @artist.slug, expires: 7.days.from_now }
+  end
+
+  def coming_from_external_source?
+    if request.referer.present?
+      URI.parse(request.referer).host != URI.parse(request.original_url).host
+    else
+      true
+    end
+  end
+
+  def determine_layout
+    if action_name == 'show' && current_user == @artist
+      'dashboard'
+    else
+      'store'
+    end
+  end
+end

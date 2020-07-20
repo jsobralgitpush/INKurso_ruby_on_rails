@@ -1,0 +1,80 @@
+class ApplicationController < ActionController::Base
+
+  # Prevent CSRF attacks by raising an exception.
+  # For APIs, you may want to use :null_session instead.
+  protect_from_forgery with: :exception
+
+  before_action :load_cart
+  before_action :devise_parameters_permitted, if: :devise_controller?
+  before_action :apply_affiliate_cookie, if: -> { params[:ref].present? }
+
+  impersonates :user
+
+  require 'will_paginate/array'
+
+
+  def after_sign_in_path_for(resource_or_scope)
+    # CrispService.update_user_info(current_user) if current_user
+    merge_carts if current_user
+    super
+  end
+
+
+  private
+
+  def set_pixel
+    @store_pixel = Store.friendly.find(current_visit.store.id).facebook_pixel_id
+  rescue ActiveRecord::RecordNotFound => error
+    @store_pixel = nil
+  end
+
+  def apply_affiliate_cookie
+    cookies[:aff_tag] = { value: params[:ref], expires: 7.days.from_now }
+  end
+
+  def load_cart
+    @cart = Cart.find_by id: session[:cart_id]
+  end
+
+  def render_404
+    respond_to do |format|
+      format.html { redirect_to root_url }
+      # format.html { render :file => "#{Rails.root}/public/404", :layout => false, :status => :not_found }
+      format.xml  { head :not_found }
+      format.any  { head :not_found }
+    end
+  end
+
+  def devise_parameters_permitted
+    devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:name, :email, :password, :password_confirmation) }
+  end
+
+  def log_error(itens)
+    logger.error "xxxxxxxxx ERROR: #{params[:action]} xxxxxxxxx"
+    itens.each do |item|
+      logger.error item.to_s
+      logger.info '---------------------------------'
+    end
+    render file: 'public/500.html', status: :internal_server_error, layout: false
+  end
+
+  def merge_carts
+    if current_user.unfinished_cart_id
+      session[:cart_id] = current_user.unfinished_cart_id if session[:cart_id].blank?
+    elsif session[:cart_id]
+      current_user.unfinished_cart_id = session[:cart_id]
+      current_user.save
+    end
+  end
+
+  protected
+
+  # Whitelist certain parameters when generating URLs
+  # See https://github.com/rails/rails/issues/26289 for more info
+  def safe_params
+    params.except(:host, :port, :protocol, :domain, :subdomain).permit!
+  end
+
+  # Makes the method above available to the rest of the application
+  helper_method :safe_params
+end

@@ -1,0 +1,39 @@
+class CreateArt < UseCase
+  def exec
+    request.art[:tags] = request.art[:tags].split(",")
+    @art = Art.new art_params
+    @art.categories = Category.where(id: request.art[:category_ids])
+    @art.user_id = request.user_id
+    @art.approval_status = APPROVAL_STATUS::WAITING
+    @art.no_financial_return = false
+
+    if valid?
+      Art::CreateAssociatedProducts.new(art: @art, art_params: request.art).exec
+      if @art.save
+        Response.new(art: @art)
+      else
+        Response.new(art: @art, errors: get_errors)
+      end
+    end
+  end
+
+  private
+
+  def art_params
+    request.art.permit(:name, :description, :user_id,
+      { tags: [] }, :price, :can_be_published, :available_on_marketplace)
+  end
+
+  def valid?
+    @art.valid?
+    @art.errors.empty?
+  end
+
+  def get_errors
+    errors = Array.new
+    @art.errors.each do |attribute, message|
+      errors << "#{attribute}: #{message}".capitalize
+    end
+    errors
+  end
+end

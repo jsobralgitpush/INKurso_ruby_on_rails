@@ -1,0 +1,18 @@
+class Admin::CompletePayment < UseCase
+  # TODO: REFATORAR. PARAR DE HERDAR DE USECASE.
+
+  def exec
+    payment = ArtistPayment.find_by :id => request.payment_id
+
+    payment.status = ARTIST_PAYMENT::PAID
+    payment.transaction_details = request.transaction_details
+    payment.payment_date = request.payment_date
+
+    if payment.save
+      Response.new(payment: payment)
+    else
+      errors = ["Erro ao processar o pagamento"]
+      Response.new(payment: payment, errors: errors)
+    end
+  end
+end

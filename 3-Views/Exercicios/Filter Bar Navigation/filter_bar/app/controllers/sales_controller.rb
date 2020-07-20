@@ -10,11 +10,12 @@ class SalesController < ApplicationController
   def search
     if params[:search].blank?  
       redirect_to(root_path, alert: "Empty field!") and return  
-    else  
+    else 
       @parameter = params[:search].downcase
       @second_paramater = Client.all.where("name LIKE ?", "%" + @parameter + "%").ids
       @results = Sale.all.where("client_id = :search", search: @second_paramater)  
-    end  
+    end
+    
   end
 
   def create

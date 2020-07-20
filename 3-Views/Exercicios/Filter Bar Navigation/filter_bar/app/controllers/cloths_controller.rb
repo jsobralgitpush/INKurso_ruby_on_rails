@@ -14,6 +14,13 @@ class ClothsController < ApplicationController
     end  
   end
 
+  def filter
+    if params[:filter].blank?
+      redirect_back(fallback_location: root_path)
+    end 
+  end 
+
+
   def create
     @cloth = Cloth.new(post_params)
 

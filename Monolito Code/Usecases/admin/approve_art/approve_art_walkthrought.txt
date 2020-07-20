@@ -1,0 +1,36 @@
+1)
+"""
+class Admin::ApproveArt < UseCase
+  def exec(art, request)
+    @art = art
+    if request[:type] == APPROVAL_ACTIONS::APPROVE
+      approve
+    elsif request[:type] == APPROVAL_ACTIONS::DENY
+      deny
+    elsif request[:type] == APPROVAL_ACTIONS::DELETE
+      delete
+    end
+  end
+
+"""
+
+***sintaxe
+  -Admin::ApproveArt -> ??
+  -if request[:type] == APPROVAL_ACTIONS::APPROVE -> ??
+
+2)
+"""
+  def approve
+    categories = Category.where(id: request[:categories])
+    tags = request[:tags]
+    @art.categories = categories
+    @art.tags = tags
+    @art.approval_status = APPROVAL_STATUS::OKAY
+    @art.approved_at = Time.now
+    @art.featured = true if request[:display_in_home]
+    @art.save
+"""
+
+***sintaxe
+  -@art.approval_status = APPROVAL_STATUS::OKAY -> ???
+  

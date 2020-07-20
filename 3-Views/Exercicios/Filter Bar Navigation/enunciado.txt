@@ -101,9 +101,19 @@ FILTER BAR
 </div>
 
 
+3-Captar as entradas do usuário
+  a) Como capturar a entrada do label checkbox?
+    i) jogar para a rota e capturar a entrada
+  
+  b) Com JS (document.querySelector)
+    i) Como mandar o texto selecionado para o controller? 
 
 
 
+DÚVIDAS
+-Quando clicamos em "aplicar filtro", na rota cloths/search vamos para o root. Por que?
+  <%= form_tag(filter_cloth_path, :method => "get") do %>
+-
 
 
 =============================================================

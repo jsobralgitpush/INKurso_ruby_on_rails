@@ -1,79 +1,87 @@
 <%= render "header" %>
 
 <div class="album py-5 bg-light">
-    <div class="container">
-      <div class="row">
+    <div class="card container">
+      <%= form_tag(filter_cloth_path, :method => "get") do %>
+        <div class="row justify-content-center">  
 
-          <div class="col-md-4">
-            <div class="mb-4-box-shadow"> 
-                <div class="card-body">
-      
-                    <h6 class="font-weight-bold">Genero</h6>
+            <div class="col-md-4">
+              <div class="mb-4-box-shadow"> 
+                  <div class="card-body">
+        
+                      <h6 class="font-weight-bold">Genero</h6>
 
-                    <div class="form-check pl-0 mb-3">
-                      <input id="reserva" type="checkbox" class="filter-option form-check-input filled-in center 1" />
-                      <label class="form-check-label small text-uppercase card-link-secondary" for="34">Masculino</label>
-                    </div>
+                      <div class="form-check pl-0 mb-3">
+                          <%= check_box_tag :gender, :masculino %>  
+                          <%= label_tag :masculino %>
+                      </div>
 
-                    <div class="form-check pl-0 mb-3">
-                      <input size="36" type="checkbox" class="filter-option form-check-input filled-in" id="36"/>
-                      <label class="form-check-label small text-uppercase card-link-secondary" for="36">Feminino</label>
-                    </div>
+                      <div class="form-check pl-0 mb-3">
+                        <%= check_box_tag :gender %>  
+                        <%= label_tag :feminino %>
+                      </div>
 
-                    <div class="form-check pl-0 mb-3">
-                      <input size="36" type="checkbox" class="filter-option form-check-input filled-in" id="36"/>
-                      <label class="form-check-label small text-uppercase card-link-secondary" for="36">Indefinido</label>
-                    </div>
+                      <div class="form-check pl-0 mb-3">
+                        <%= check_box_tag :gender %>  
+                        <%= label_tag :indefinido %>
+                      </div>
 
-                </div>
-            </div>          
-          </div>
+                  </div>
+              </div>          
+            </div>
 
-          <div class="col-md-4">
-            <div class="mb-4-box-shadow">
-                <div class="card-body">
-      
-                    <h6 class="font-weight-bold">Tipo</h6>
+            <div class="col-md-4">
+              <div class="mb-4-box-shadow" >
+                  <div class="card-body justify-content-center">
+        
+                      <h6 class="font-weight-bold">Tipo</h6>
 
-                    <div class="form-check pl-0 mb-3">
-                      <input size="34" type="checkbox" class="filter-option form-check-input filled-in" id="34"/>
-                      <label class="form-check-label small text-uppercase card-link-secondary" for="34">Camiseta</label>
-                    </div>
+                      <div class="form-check pl-0 mb-3">
+                        <%= check_box_tag :tipo, :camiseta %>  
+                        <%= label_tag :camiseta %>
+                      </div>
 
-                    <div class="form-check pl-0 mb-3">
-                      <input size="36" type="checkbox" class="filter-option form-check-input filled-in" id="36"/>
-                      <label class="form-check-label small text-uppercase card-link-secondary" for="36">Calça</label>
-                    </div>
+                      <div class="form-check pl-0 mb-3">
+                        <%= check_box_tag :tipo, :calça %>  
+                        <%= label_tag :calça %>
+                      </div>
 
-                </div>
-            </div>          
-          </div>
+                  </div>
+              </div>          
+            </div>
 
-          <div class="col-md-4">
-            <div class="mb-4-box-shadow">
-                <div class="card-body">
-      
-                    <h6 class="font-weight-bold">Preço</h6>
+            <div class="col-md-4">
+              <div class="mb-4-box-shadow">
+                  <div class="card-body">
+        
+                      <h6 class="font-weight-bold">Preço</h6>
 
-                    <div class="form-check pl-0 mb-3">
-                      <input size="34" type="checkbox" class="filter-option form-check-input filled-in" id="34"/>
-                      <label class="form-check-label small text-uppercase card-link-secondary" for="34">Menor que R$100</label>
-                    </div>
+                          <div class="form-check pl-0 mb-3">
+                            <%= check_box_tag :price, :menor_que_100 %>  
+                            <%= label_tag :menor_que_100 %>
+                          </div>
 
-                    <div class="form-check pl-0 mb-3">
-                      <input size="36" type="checkbox" class="filter-option form-check-input filled-in" id="36"/>
-                      <label class="form-check-label small text-uppercase card-link-secondary" for="36">Entre R$100 e R$200</label>
-                    </div>
+                          <div class="form-check pl-0 mb-3">
+                            <%= check_box_tag :price, :entre_100_e_200 %>  
+                            <%= label_tag :entre_100_e_200 %>
+                          </div>
 
-                    <div class="form-check pl-0 mb-3">
-                      <input size="36" type="checkbox" class="filter-option form-check-input filled-in" id="36"/>
-                      <label class="form-check-label small text-uppercase card-link-secondary" for="36">Maior que R$200</label>
-                    </div>
+                          <div class="form-check pl-0 mb-3">
+                            <%= check_box_tag :price, :maior_que_200 %>  
+                            <%= label_tag :maior_que_200 %>
+                          </div>
+                        
 
-                </div>
-            </div>          
-          </div>
-
+                  </div>
+              </div>          
+            </div>
+          
+            <div class="col text-center">
+              <%= button_tag "Aplicar Filtro", :class => 'btn btn-dark',:name => nil%>
+            </div>
+          
+      <% end %>
+            
       </div>
     </div>
 </div>
@@ -95,7 +103,7 @@
           </div>
         </div>
       
-      <% end %>
+    <% end %>
 
     </div>
 </div>
