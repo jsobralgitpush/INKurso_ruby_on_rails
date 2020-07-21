@@ -1,0 +1,201 @@
+FILTER BAR
+
+1-Colocar mais atributos dentro do Model Cloth
+  a) Genero
+  b) Preço
+
+  Tutorial
+    1-rails g migration AddColumnToTable
+    2-  
+        add_column :cloths, :gender, :string
+        add_column :cloths, :price, :integer
+
+    3-rails db:migrate RAILS_ENV=development
+
+2-Criar a barra de filtro na lateral da página e filtrar por
+  a) Style
+    i) Camiseta
+    ii) Calça
+  b) Genero 
+    i) Masc
+    ii) Fem 
+    iii) Indefinido
+  c) Preço
+
+
+(NO ARQUIVO search.html.erb)
+
+
+
+3-Captar as entradas do usuário
+  a) Como capturar a entrada do label checkbox?
+    i) jogar para a rota e capturar a entrada
+      A) html.erb
+      -<%= form_tag(filter_id_cloth_path(@gender, @tipo, @price), :method => "get") do %>  
+      -<%= check_box_tag :gender, :masculino %>  
+      -<%= label_tag :masculino %>
+
+      B) routes.rb
+      -get 'cloths/filter(/:gender)(/:tipo)(/:price)' => 'cloths#filter', :as => 'filter_id_cloth'
+      
+  
+  (OPCIONAL) b) Com JS (document.querySelector)
+    i) Como mandar o texto selecionado para o controller?
+
+  b) No controller, fazemos a lógica por trás dos parâmetros 
+    i) Se não tiver parametro algum
+          if params[:gender].blank? && params[:tipo].blank? && params[:price].blank? 
+            redirect_back(fallback_location: root_path)
+
+    ii) Se tivermos apenas um params
+      .) gender
+            elsif params[:tipo].blank? && params[:price].blank?
+              @param_gender = params[:gender]
+              @results = @results.select{|hash| hash['gender'] == @param_gender}
+
+      ..) tipo
+          elsif params[:gender].blank? && params[:price].blank?
+            @param_style = params[:tipo]
+            @results = @results.select{|hash| hash['style'] == @param_style}
+
+      ...) price
+          elsif params[:gender].blank? && params[:tipo].blank?
+            @param_price = params[:price]
+            @param_price = @param_price.split('_')
+            @len = @param_price.length()
+            if @len == 3 && @param_price[2] == '100'
+              @results = @results.select{|hash| hash['price'] < @param_price[2].to_i}
+            elsif @len == 3 && @param_price[2] == '200' 
+              @results = @results.select{|hash| hash['price'] > @param_price[2].to_i}
+            else
+              @results = @results.select{|hash| hash['price'] > 100 && hash['price'] < 200 }
+            end
+
+      iii) se tivermos dois params
+        .) gender e tipo
+          elsif params[:gender].present? && params[:tipo].present?
+            @param_style = params[:tipo]
+            @param_gender = params[:gender]
+            @results = @results.select{|hash| hash['style'] == @param_style && hash['gender'] == @param_gender}
+        
+        ..) gender e price
+            elsif params[:gender].present? && params[:price].present?
+              @param_gender = params[:gender]
+              @param_price = params[:price]
+              @param_price = @param_price.split('_')
+              @len = @param_price.length()
+              if @len == 3 && @param_price[2] == '100'
+                @results = @results.select{|hash| hash['price'] < @param_price[2].to_i && hash['gender'] == @param_gender}
+              elsif @len == 3 && @param_price[2] == '200' 
+                @results = @results.select{|hash| hash['price'] > @param_price[2].to_i && hash['gender'] == @param_gender}
+              else
+                @results = @results.select{|hash| hash['price'] > 100 && hash['price'] < 200  && hash['gender'] == @param_gender}
+              end
+        
+        ...) tipo e price
+            elsif params[:tipo].present? && params[:price].present?
+              @param_style = params[:tipo]
+              @param_price = params[:price]
+              @param_price = @param_price.split('_')
+              @len = @param_price.length()
+              if @len == 3 && @param_price[2] == '100'
+                @results = @results.select{|hash| hash['price'] < @param_price[2].to_i && hash['style'] == @param_style}
+              elsif @len == 3 && @param_price[2] == '200' 
+                @results = @results.select{|hash| hash['price'] > @param_price[2].to_i && hash['style'] == @param_style}
+              else
+                @results = @results.select{|hash| hash['price'] > 100 && hash['price'] < 200  && hash['style'] == @param_style}
+              end
+
+      iv) tres params
+          else
+            @param_gender = params[:gender]
+            @param_style = params[:tipo]
+            @param_price = params[:price]
+            @param_price = @param_price.split('_')
+            @len = @param_price.length()
+            if @len == 3 && @param_price[2] == '100'
+              @results = @results.select{|hash| hash['price'] < @param_price[2].to_i && hash['style'] == @param_style && hash['gender'] == @param_gender}
+            elsif @len == 3 && @param_price[2] == '200' 
+              @results = @results.select{|hash| hash['price'] > @param_price[2].to_i && hash['style'] == @param_style && hash['gender'] == @param_gender}
+            else
+              @results = @results.select{|hash| hash['price'] > 100 && hash['price'] < 200  && hash['style'] == @param_style && hash['gender'] == @param_gender}
+            end
+
+
+  c) Pegarmos a ORM do controller para realizarmos um novo filtro
+    """
+    USAMOS O COMANDO 'session[:passed_variable]'
+
+     def search
+    if params[:search].blank?  
+      redirect_to(root_path) and return  
+    else  
+      @parameter = params[:search].downcase
+      @results = Cloth.all.where("name LIKE ?", "%" + @parameter + "%") 
+      session[:passed_variable] = @results
+    end
+
+    end
+
+    def filter
+      @gender = params[:gender]
+      @tipo = params[:tipo]
+      @price = params[:price]
+
+      @results = session[:passed_variable]
+
+      raise
+
+      if params[:gender].blank? && params[:tipo].blank? && params[:price].blank? 
+        redirect_back(fallback_location: root_path)
+      else
+      end
+    
+    """
+
+    PS: este @results chegará como um array de hashes (e não como uma ORM como na action anterior)
+    Por isso, para iterar e filtra-lo será diferente...
+
+      a) filtro
+      """
+              @results = @results.select{|hash| hash['gender'] == @param_gender}
+      """
+
+      b) iteração
+      """
+          <% @results.each do |cloth| %>
+
+              <div class="col-md-4">
+                <div class="card mb-4-box-shadow">
+                  <%= image_tag( cloth['url'], class: "card-img-top") %>
+                  <div class="card-body">
+                    <h4><%= cloth['name'] %></h4>
+                    <p class="card-text">História da Camiseta</p>
+                  </div>
+                </div>
+              </div>
+      """
+
+
+
+DÚVIDAS
+-Quando clicamos em "aplicar filtro", na rota cloths/search vamos para o root. Por que?
+  <%= form_tag(filter_cloth_path, :method => "get") do %>
+-
+
+
+=============================================================
+
+1-Colocar mais atributos dentro do Model Cloth
+  a) Genero
+  b) Preço
+
+2-Criar a barra de filtro na lateral da página e filtrar por
+  a) Style
+    i) Camiseta
+    ii) Calça
+  b) Genero 
+    i) Masc
+    ii) Fem 
+    iii) Indefinido
+  c) Preço - slide bar
