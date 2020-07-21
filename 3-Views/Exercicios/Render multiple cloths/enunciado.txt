@@ -1,0 +1,13 @@
+Criar uma tela que possamos usar em todos as peças de roupas para calculo de cep, tamanho e etc
+
+  1) Cada peça de roupa precisa ser clicável
+
+    """
+        <%= link_to root_path do %>
+          <%= image_tag( cloth.url, class: "card-img-top") %>
+        <% end %>
+    """
+  
+  2) Quando você clica na peça, você precisa ser redirecionado para uma rota especial
+
+  

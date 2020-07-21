@@ -2,7 +2,7 @@
 
 <div class="album py-5 bg-light">
     <div class="card container">
-      <%= form_tag(filter_cloth_path, :method => "get") do %>
+      <%= form_tag(filter_id_cloth_path(@gender, @tipo, @price), :method => "get") do %>
         <div class="row justify-content-center">  
 
             <div class="col-md-4">
@@ -12,17 +12,17 @@
                       <h6 class="font-weight-bold">Genero</h6>
 
                       <div class="form-check pl-0 mb-3">
-                          <%= check_box_tag :gender, :masculino %>  
+                          <%= check_box_tag :gender, :masculino  %>  
                           <%= label_tag :masculino %>
                       </div>
 
                       <div class="form-check pl-0 mb-3">
-                        <%= check_box_tag :gender %>  
+                        <%= check_box_tag :gender, :feminino %>  
                         <%= label_tag :feminino %>
                       </div>
 
                       <div class="form-check pl-0 mb-3">
-                        <%= check_box_tag :gender %>  
+                        <%= check_box_tag :gender, :indefinido %>  
                         <%= label_tag :indefinido %>
                       </div>
 
@@ -99,6 +99,7 @@
             <div class="card-body">
               <h4><%= cloth.name %></h4>
               <p class="card-text">História da Camiseta</p>
+              <p class="card-text">R$<%= cloth.price %></p>
             </div>
           </div>
         </div>

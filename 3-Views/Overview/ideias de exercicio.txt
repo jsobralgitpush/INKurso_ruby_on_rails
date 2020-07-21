@@ -1,3 +1,4 @@
 1-Criar um cabeçalho e rodapé reserva para usarmos em multiplas rotas
 2-Criar um layout de exposição de camisas de acordo com as infos que colocamos num banco
 3-Treinar os helpers, como o image_path
+4-Para cada imagem de roupa, renderizarmos uma tela de exposição de produto 

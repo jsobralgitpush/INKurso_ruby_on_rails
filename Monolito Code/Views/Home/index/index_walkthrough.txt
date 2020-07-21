@@ -1,0 +1,27 @@
+1) Para descermos um link num botão
+"""
+    <%= link_to subscriptions_path do %>
+      <div class='btn btn-lg btn-danger'>
+        <span class='small font-weight-bold'>COMECE A VENDER</span>
+      </div>
+    <% end %>
+"""
+
+2) 
+"""
+<%= render "arts/paginated_arts", arts: @arts %>
+"""
+
+-Quem é arts/paginated_arts?
+-quem é arts: ?
+
+3) Cadê o cabeçalho?
+
+4) 
+"""
+<%= render "subscriptions/strips/plans" %>
+"""
+
+-Quem é subscriptions/strips?
+
+

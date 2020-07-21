@@ -1,0 +1,129 @@
+<div class='container-fluid d-flex justify-content-center h-100 main-menu'>
+  <div class='row justify-content-center mt-0' style="">
+    <div class='col-12 col-sm-12 col-lg-12 col-md-12 text-center'>
+      <h1 class='text-light text-rsv home-title'>Comece sua loja</h1>
+    </div>
+    <div class='col-sm-12 col-md-4 text-center mt-4'>
+      <p class='text-white font-weight-bold h6'>Crie sua própria loja online e venda direto para seus clientes finais. Tenha produtos em escala sem se preocupar com produção, estoque, faturamento e logística.</p>
+    </div>
+    <div class='col-12 text-center mt-4'>
+    <%= link_to subscriptions_path do %>
+      <div class='btn btn-lg btn-danger'>
+        <span class='small font-weight-bold'>COMECE A VENDER</span>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-4">
+  <div class="row">
+    <div class='col-12'>
+    <h2>Destaques</h2>
+    </div>
+    <div class='col-12 mt-3'>
+      <%= render "arts/paginated_arts", arts: @arts %>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="container-fluid d-flex justify-content-center search-box">
+  <div class='container'>
+    <div class="row">
+      <div class='col-12 col-lg-12 mb-3  text-left'>
+        <span class='h1 text-white text-rsv search-title'>Descubra produtos<br> feitos com a INK</span>
+      </div>
+      <div class='col-12 mt-4 text-right'>
+        <form class="input-group w-100 col-md-6 col-sm-4 px-0" role="search" action="<%= arts_path %>">
+          <input type="text" class="form-control shadow border-right-0 border p-3 m-0" placeholder="BUSCAR" name="search" style="width: 85%; height: 80px; outline:none; " autocomplete="off">
+          <button class="input-group-btn btn btn-light border-left-0 border p-0 m-0 shadow" style="height: 80px; width: 13%;"type="submit" style="outline:none; ">
+            <%= icon "fas", "search", class:'text-danger m-0 p-0' %>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+    <%= render "subscriptions/strips/plans" %>
+<style>
+@media only screen and (max-width: 600px) {
+  .search-title {
+    font-size: 2.2rem !important;
+  }
+  .home-title {
+    font-size: 2.2rem !important;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .search-title {
+    font-size: 2.6rem !important;
+  }
+  .home-title {
+    font-size: 2.6rem !important;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .search-title {
+    font-size: 3.5rem !important;
+  }
+  .home-title {
+    font-size: 4.6rem !important;
+  }
+}
+
+
+@font-face {
+  font-family: "Reserva-Display";
+  src: url(font-path('Reserva-Display.otf')) format("truetype");
+}
+
+.search-box {
+  background-image: url(<%= asset_path("bg-fe-schallen-02.jpg") %>);
+    box-shadow:inset 0 0 0 2000px rgba(255, 255, 255, 0.18);
+
+  /* Full height */
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+    min-height: 65%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 65vh; /* These two lines are counted as one :-)       */
+
+  align-items: center;
+}
+
+
+
+.text-rsv {
+  font-family: Reserva-Display!important;
+}
+
+.main-menu {
+    /* The image used */
+  background-image: url(<%= asset_path("bg-mauricio-mota-03.jpg") %>);
+  box-shadow:inset 0 0 0 2000px rgba(0, 0, 0, 0.1);
+
+  /* Full height */
+  height: 100vh;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+    min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+
+  align-items: center;
+  /* width: 100vh; */
+  /* height: 100vh; */
+  /* background: '' */
+}
+
+</style>
