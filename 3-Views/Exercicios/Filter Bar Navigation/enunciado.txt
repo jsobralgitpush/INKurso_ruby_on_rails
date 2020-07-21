@@ -18,3 +18,5 @@ FILTER BAR
     iii) Maior que 200
 
 3-Lidar com o checkbox dos filtros e como capturá-los e transformando-los em query
+
+OBS: Não há necessidade de fazer uma lógica que contemple o usuário apertar apenas um checkbox
