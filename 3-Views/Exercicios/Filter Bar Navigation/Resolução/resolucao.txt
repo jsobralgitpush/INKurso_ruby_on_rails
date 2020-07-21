@@ -178,10 +178,6 @@ FILTER BAR
 
 
 
-DÚVIDAS
--Quando clicamos em "aplicar filtro", na rota cloths/search vamos para o root. Por que?
-  <%= form_tag(filter_cloth_path, :method => "get") do %>
--
 
 
 =============================================================
