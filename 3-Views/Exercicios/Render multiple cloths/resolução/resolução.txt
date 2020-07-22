@@ -1,0 +1,194 @@
+Criar uma tela que possamos usar em todos as peças de roupas para calculo de cep, tamanho e etc
+
+  1) Cada peça de roupa precisa ser clicável
+
+    """
+        <%= link_to root_path do %>
+          <%= image_tag( cloth.url, class: "card-img-top") %>
+        <% end %>
+    """
+  
+  2) Quando você clica na peça, você precisa ser redirecionado para uma rota especial
+    i) Criar a rota no routes.rb
+      get 'cloths/:item' => 'cloths#item', :as => 'cloth_item'
+    
+    ii) Criar a action no controller
+
+    iii) Criar a item.html.erb, mandando o id para a rota
+      <%= link_to cloth_item_path(cloth.id) do %>
+
+  3) Dentro do controller, acessar as informações da peça da peça de roupa
+        @cloth_id = params[:item]
+        @results = Cloth.all.where("id = ?", @cloth_id)
+    
+  4) Colocar barra de tamanho e de cor, de acordo com o estoque 
+    i) Colocar o botão sem funcionalidade
+      .) tamanho
+      ..) cor
+      ...) CEP
+
+      (VERIFICAR O ARQUIVO ITEM.HTML.ERB PARA VER A LÓGICA POR TRAS DE CADA BOTÃO)
+    
+  
+  5) Implementando a funcionalidade dos botões
+    a) tamanho
+      i) Criar um model Stock
+        -id da peça (foreign key)
+        -tamanho
+        -cor
+        -stock - NÃO PRECISA...colocar uma linha para cada estoque
+
+        rails generate model Stock stock:integer cloth:references tamanho:string cor:string
+
+      ii) Popular a base 
+        ...criamos uma rota de inserção...
+
+        (IGUAL AO SALES/NEW, do exercicio do Salestest)
+
+        ...no sumário...
+
+        controller
+            def new
+              end
+
+              def create
+                @stock = Stock.new(post_params)
+
+                @stock.save
+            end
+        
+        routes
+          get 'stocks/new' => 'stocks#new'
+          post 'stocks/new' => 'stocks#create'
+
+        view
+          <h1>Add Stock</h1>
+              <%= form_for :stock, url: stocks_new_path  do |f| %>
+                <p>
+                  <%= f.label :stocks  %>
+                  <%= f.text_field :stocks  %>
+                </p>
+
+                <p>
+                  <%= f.label :cloth_id %>
+                  <%= f.select :cloth_id, options_for_select(Cloth.all.map{|s|[s.name, s.id]}) %>
+                </p>
+
+                <p>
+                  <%= f.label :tamanho  %>
+                  <%= f.text_field :tamanho %>
+                </p>
+
+                <p>
+                  <%= f.label :cor  %>
+                  <%= f.text_field :cor %>
+                </p>
+                <p>
+                  <%= f.submit %> 
+                </p> 
+
+              <% end %>
+
+
+      iii) Fazer com que a cor seja um botão para cada cor disponível
+        .) controller
+
+            def item
+              @cloth_id = params[:item]
+              @results = Cloth.all.where("id = ?", @cloth_id)
+
+              @stocks = Stock.all.where("cloth_id = ?", @cloth_id)
+              @stocks_uniq_color = @stocks.map{|s|[s.cor]}.uniq
+
+            end
+
+        ..) view
+
+            <% @stocks_uniq_color.each do |stock| %>
+              <div class="col col-lg-2">
+                 <%= link_to cloth_color_path(cloth.id, stock[0]) do %>
+                  <button type="button" class="btn btn-outline-dark"><%= stock[0] %></button>
+                <% end %>
+              </div>
+              <br>
+            <% end %>
+          
+        ...) routes 
+
+            get 'cloths/:item/:color' => 'cloths#item_color', :as => 'cloth_color'
+
+      iv) Fazer com que os tamanhos sejam todos os distintos disponíveis para a cor selecionada
+
+          def item_color
+            @cloth_id = params[:item]
+            @cloth_color = params[:color]
+            @results = Cloth.all.where("id = ?", @cloth_id)
+
+            @stocks = Stock.all.where("cloth_id = ? AND cor = ?", @cloth_id, @cloth_color)
+            @stocks_uniq_tam = @stocks.map{|s|[s.cor]}.uniq
+
+          end
+
+  6) Funcionalidade do CEP 
+  (DEIXAR PARA DEPOIS)
+
+
+  7) Debitar do model Stock assim que o usuário clicar em save stock 
+    i) Conseguir todos os params do usuário para fazer o delete no banco
+      .) cloth_id = vem do @results.each
+      ..) cor = o usuário clica na cor e mandamos direto pro parametro
+
+                    <% @stocks_uniq_color.each do |stock| %>
+                      <div class="col col-lg-2">
+                        <%= link_to cloth_color_path(cloth.id, stock[0]) do %>
+                          <button type="button" class="btn btn-outline-dark"><%= stock[0] %></button>
+                        <% end %>
+                      </div>
+                      <br>
+                    <% end %>
+
+      ...) tamanho = mais dificil, mas está dentro do form 
+
+                    <%= form_for :stock, url: cloth_discount_path(@cloth_id, @cloth_color)  do |f| %>
+                      <p>
+                        <%= f.select :tamanho, options_for_select(@stocks.map{|s|[s.tamanho]}.uniq) %>
+                      </p>
+
+                    <p>
+                      <%= f.submit class: "btn btn-dark" %> 
+                    </p> 
+                    
+                    <% end %>
+
+                    Conseguimos acessar este params fazendo no controller
+
+                    @tamanho = params[:stock][:tamanho]
+
+                    (Se ficar dificil ver como, dar um raise no controller e ver como o "form_for" chega)
+
+
+        PS: Podemos fazer uma lógica para quando não houve stock...
+          a) item.html.erb
+
+                <% if @var_test == 1 %>
+                  <h5 class="mt-0"> Selecione a cor que o tamanho estará disponível :)</h5>
+                <% end %>
+
+                <% if @var_test == 0 %>
+                  <h5> Lamentamos, mas a peça está fora dos estoques :( </h5>
+                <% end %>
+
+
+          b) controller
+
+                if @stocks_uniq_color.length() == 0
+                  @var_test = 0
+                else
+                  @var_test = 1
+                end
+     
+
+
+
+
+  

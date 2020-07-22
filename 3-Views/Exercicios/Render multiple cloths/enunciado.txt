@@ -2,12 +2,16 @@ Criar uma tela que possamos usar em todos as peças de roupas para calculo de ce
 
   1) Cada peça de roupa precisa ser clicável
 
-    """
-        <%= link_to root_path do %>
-          <%= image_tag( cloth.url, class: "card-img-top") %>
-        <% end %>
-    """
-  
-  2) Quando você clica na peça, você precisa ser redirecionado para uma rota especial
+  2) Quando você clica na peça, você precisa ser redirecionado para uma rota especial que possa ser usada para todos os produtos
 
-  
+  3) Criar um model Stock com atributos
+    i) tamanho
+    ii) cor
+    iii) cloth_id
+
+  4) Colocar botões de tamanho e de cor, de acordo com o estoque nesta nova rota 
+
+  5) Funcionalidade do CEP (OPCIONAL)
+
+  6) Clicando no botão de submit, debitar uma peça de roupa no model Stock 
+   

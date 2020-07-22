@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200716171142) do
+ActiveRecord::Schema.define(version: 20200722142456) do
 
   create_table "clients", force: :cascade do |t|
     t.string "name"
@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 20200716171142) do
     t.text "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "gender"
+    t.integer "price"
   end
 
   create_table "products", force: :cascade do |t|
@@ -42,6 +44,25 @@ ActiveRecord::Schema.define(version: 20200716171142) do
     t.datetime "updated_at", null: false
     t.index ["client_id"], name: "index_sales_on_client_id"
     t.index ["product_id"], name: "index_sales_on_product_id"
+  end
+
+  create_table "sessions", force: :cascade do |t|
+    t.string "session_id", null: false
+    t.text "data"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["session_id"], name: "index_sessions_on_session_id", unique: true
+    t.index ["updated_at"], name: "index_sessions_on_updated_at"
+  end
+
+  create_table "stocks", force: :cascade do |t|
+    t.integer "stock"
+    t.integer "cloth_id"
+    t.string "tamanho"
+    t.string "cor"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cloth_id"], name: "index_stocks_on_cloth_id"
   end
 
 end

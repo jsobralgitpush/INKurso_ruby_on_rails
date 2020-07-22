@@ -1,30 +1,121 @@
 <%= render "header" %>
 
 <div class="album py-5 bg-light">
-      <div class="container">
-
-        <div class="row">
-
-          <% @results.each do |cloth| %>
+    <div class="card container">
+      <%= form_tag(filter_id_cloth_path(@gender, @tipo, @price), :method => "get") do %>
+        <div class="row justify-content-center">  
 
             <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-              <%= link_to cloth_id_path do %>
-                <%= image_tag( cloth.url, class: "card-img-top") %>
-              <% end %>
-                <div class="card-body">
-                  <h4><%= cloth.name %></h4>
-                  <p class="card-text">História da Camiseta</p>
-                  <div class="d-flex justify-content-between align-items-center">
+              <div class="mb-4-box-shadow"> 
+                  <div class="card-body">
+        
+                      <h6 class="font-weight-bold">Genero</h6>
+
+                      <div class="form-check pl-0 mb-3">
+                          <%= check_box_tag :gender, :masculino  %>  
+                          <%= label_tag :masculino %>
+                      </div>
+
+                      <div class="form-check pl-0 mb-3">
+                        <%= check_box_tag :gender, :feminino %>  
+                        <%= label_tag :feminino %>
+                      </div>
+
+                      <div class="form-check pl-0 mb-3">
+                        <%= check_box_tag :gender, :indefinido %>  
+                        <%= label_tag :indefinido %>
+                      </div>
+
                   </div>
-                </div>
-              </div>
+              </div>          
+            </div>
+
+            <div class="col-md-4">
+              <div class="mb-4-box-shadow" >
+                  <div class="card-body justify-content-center">
+        
+                      <h6 class="font-weight-bold">Tipo</h6>
+
+                      <div class="form-check pl-0 mb-3">
+                        <%= check_box_tag :tipo, :camiseta %>  
+                        <%= label_tag :camiseta %>
+                      </div>
+
+                      <div class="form-check pl-0 mb-3">
+                        <%= check_box_tag :tipo, :calça %>  
+                        <%= label_tag :calça %>
+                      </div>
+
+                  </div>
+              </div>          
+            </div>
+
+            <div class="col-md-4">
+              <div class="mb-4-box-shadow">
+                  <div class="card-body">
+        
+                      <h6 class="font-weight-bold">Preço</h6>
+
+                          <div class="form-check pl-0 mb-3">
+                            <%= check_box_tag :price, :menor_que_100 %>  
+                            <%= label_tag :menor_que_100 %>
+                          </div>
+
+                          <div class="form-check pl-0 mb-3">
+                            <%= check_box_tag :price, :entre_100_e_200 %>  
+                            <%= label_tag :entre_100_e_200 %>
+                          </div>
+
+                          <div class="form-check pl-0 mb-3">
+                            <%= check_box_tag :price, :maior_que_200 %>  
+                            <%= label_tag :maior_que_200 %>
+                          </div>
+                        
+
+                  </div>
+              </div>          
             </div>
           
-          <% end %>
-
-        </div>
-
-      </div>
+            <div class="col text-center">
+              <%= button_tag "Aplicar Filtro", :class => 'btn btn-dark',:name => nil%>
+            </div>
           
+      <% end %>
+            
+      </div>
+    </div>
 </div>
+
+
+
+<div class="album py-5 bg-light">
+    <div class="row">
+
+      <% @results.each do |cloth| %>
+
+        <div class="col-md-4">
+          <div class="card mb-4-box-shadow">
+            <%= image_tag( cloth.url, class: "card-img-top") %>
+            <div class="card-body">
+              <h4><%= cloth.name %></h4>
+              <p class="card-text">História da Camiseta</p>
+              <p class="card-text">R$<%= cloth.price %></p>
+            </div>
+          </div>
+        </div>
+      
+    <% end %>
+
+    </div>
+</div>
+      
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+$(document).ready(function(){
+    $("#reserva").click(function() {
+        $("#reserva").not(this).prop('checked', false);
+    });
+});
+</script>
+
