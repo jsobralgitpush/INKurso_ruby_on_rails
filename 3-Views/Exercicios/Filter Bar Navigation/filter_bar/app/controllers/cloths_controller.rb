@@ -55,13 +55,13 @@ class ClothsController < ApplicationController
     
     #Dois params
     #a) gender e tipo
-    elsif params[:gender].present? && params[:tipo].present?
+    elsif params[:gender].present? && params[:tipo].present? && params[:price].blank?
       @param_style = params[:tipo]
       @param_gender = params[:gender]
       @results = @results.select{|hash| hash['style'] == @param_style && hash['gender'] == @param_gender}
       
     #b) gender e price
-    elsif params[:gender].present? && params[:price].present?
+    elsif params[:gender].present? && params[:price].present? && params[:tipo].blank?
       @param_gender = params[:gender]
       @param_price = params[:price]
       @param_price = @param_price.split('_')
@@ -76,7 +76,7 @@ class ClothsController < ApplicationController
 
 
     #c) tipo e price
-    elsif params[:tipo].present? && params[:price].present?
+    elsif params[:tipo].present? && params[:price].present? && params[:gender].blank? 
       @param_style = params[:tipo]
       @param_price = params[:price]
       @param_price = @param_price.split('_')
