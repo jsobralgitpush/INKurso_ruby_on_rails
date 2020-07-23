@@ -1,8 +1,12 @@
 class ClothsController < ApplicationController
   def index
   end 
+
+  def market
+    @artist = params[:market]
+  end
   
-  def new
+def new
   end
 
   def search
@@ -122,8 +126,6 @@ class ClothsController < ApplicationController
       @var_test = 1
     end
 
-    raise
-
   end
 
   def item_color
@@ -146,10 +148,9 @@ class ClothsController < ApplicationController
 
   def discount
     #@stock = CourseQuery.where(id: params[:id], status: 0).update(stock)
-  
-
-
   end
+
+
 
   private def post_params
     params.require(:cloth).permit(:name, :artist, :style, :url)

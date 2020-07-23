@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">
+    <%= image_tag "rsv.png" %>
+    <% if @artist == 'José Sobral' %>
+      <%= image_tag "plant.png" %>
+    <% elsif @artist == 'Cahue Beltrão' %>
+      <%= image_tag "fire.png" %>
+    <% elsif @artist == 'Lucas Bitt' %>
+      <%= image_tag "sword.png" %>
+    <% else %> 
+      <%= image_tag "shield.png" %>
+    <% end %>
+  </a>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <%= form_tag(search_page_cloth_path, :method => "get",  class: 'navbar-form navbar-left') do %>  
+        <div class="input-group">  
+          <%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %>  
+          <div class="input-group-btn">  
+            <%= button_tag "Procurar", :class => 'btn btn-light',:name => nil%>  
+          </div>  
+        </div>  
+      <% end %>
+  </div>
+</nav>
+
+<style>
+.navbar-brand {
+  width:150px;
+  font-size: 24px;
+}
+.navbar-brand img {
+  height: 50px;
+  /* put value of image height as your need */
+  float: left;
+  margin-right: 7px;
+}
+</style>
