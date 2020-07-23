@@ -6,7 +6,13 @@
   <div class="row">
   <% Cloth.select(:artist).distinct.each do |cloth| %>
     <div class="col-sm">
-      <%= cloth.artist %>
+      <%= link_to cloth_store_path(cloth.artist) do %> 
+      <button 
+      type="button" 
+      class="btn btn-outline-secondary">
+        <%= cloth.artist %>
+      </button>
+      <% end %>
     </div>
   <% end %>
   </div>
