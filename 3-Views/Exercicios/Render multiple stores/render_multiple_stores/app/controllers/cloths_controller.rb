@@ -4,6 +4,8 @@ class ClothsController < ApplicationController
 
   def market
     @artist = params[:market]
+
+    @cloths_from_store = Cloth.where("artist = ?", @artist)
   end
   
 def new
