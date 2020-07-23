@@ -18,9 +18,12 @@ Rails.application.routes.draw do
 
   #Rota de lojista
   get 'artist/:market' => 'cloths#market', :as => 'cloth_market'
+  get 'artist/:market/about' => 'cloths#about', :as => 'cloth_about'
 
   get 'stocks/new' => 'stocks#new'
   post 'stocks/new' => 'stocks#create'
+
+  
 
   post 'stocks/discount/:cloth_id/:cor' => 'stocks#discount', :as => 'cloth_discount' 
 
