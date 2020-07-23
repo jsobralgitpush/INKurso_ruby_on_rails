@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   get 'cloths/:item/:color' => 'cloths#item_color', :as => 'cloth_color'
 
   #Rota de lojista
-  get 'cloths/:store' => 'cloths#stores', :as => 'cloth_store'
+  get 'artist/:market' => 'cloths#market', :as => 'cloth_market'
 
   get 'stocks/new' => 'stocks#new'
   post 'stocks/new' => 'stocks#create'
