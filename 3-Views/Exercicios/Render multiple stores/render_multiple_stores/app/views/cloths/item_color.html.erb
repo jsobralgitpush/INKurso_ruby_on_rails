@@ -46,7 +46,7 @@
               <div class="input-group">  
                 <%= search_field_tag :search, params[:search], placeholder: "Digite seu CEP", class: "form-control" %>  
                 <div class="input-group-btn">  
-                  <%= button_tag "Procurar", :class => 'btn btn-light',:name => nil%>  
+                  <%= button_tag "Calcular Frete", :class => 'btn btn-light',:name => nil%>  
                 </div>  
               </div>  
             <% end %>
@@ -55,28 +55,20 @@
             <br>
 
             <h5 class="mt-0"> Cor</h5>   
-       
-   
-            <% @stocks_uniq_color.each do |stock| %>
-              <div class="col col-lg-2">
-                <%= link_to cloth_color_path(cloth.id, stock[0]) do %>
-                  <button type="button" class="btn btn-outline-dark"><%= stock[0] %></button>
-                <% end %>
-              </div>
-              <br>
-            <% end %>
-
-            <br>
-            <br>
-            <% if @stocks_uniq_color.present? %>
-              <h5 class="mt-0"> Selecione a cor que o tamanho estará disponível :)</h5>
-            <% else %>
-              <h5> Lamentamos, mas a peça está fora dos estoques :( </h5>
-            <% end %>
+            <p><%= @cloth_color %></p>
 
 
+            <h5 class="mt-0"> Tamanho</h5>
+            <%= form_for :stock, url: cloth_discount_path(@cloth_id, @cloth_color)  do |f| %>
+              <p>
+                <%= f.select :tamanho, options_for_select(@stocks.map{|s|[s.tamanho]}.uniq) %>
+              </p>
+
+            <p>
+              <%= f.submit class: "btn btn-dark" %> 
+            </p> 
             
-   
+            <% end %>
 
     
         </div>

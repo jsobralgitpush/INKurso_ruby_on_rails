@@ -1,0 +1,40 @@
+<%= render "header" %>
+
+<div class="album py-5 bg-light">
+    <div class="card container">
+      <div class="row justify-content-center">  
+
+        <h1>Se você quiser aplicar outro filtro é só voltar para a página anterior :)</h1> 
+        <ul>
+          <li><b>genero:</b> <%= @param_gender %></li>
+
+          <li><b>tipo: </b><%= @param_style %></li>
+        
+          <li><b>preço: </b> <%= @param_price %></li>
+        </ul>
+
+      </div>
+    </div>
+</div>
+
+<div class="album py-5 bg-light">
+    <div class="row">
+
+      <% @results.each do |cloth| %>
+
+        <div class="col-md-4">
+          <div class="card mb-4-box-shadow">
+            <%= image_tag( cloth['url'], class: "card-img-top") %>
+            <div class="card-body">
+              <h4><%= cloth['name'] %></h4>
+              <p class="card-text">História da Camiseta</p>
+              <p class="card-text">R$<%= cloth['price'] %></p>
+            </div>
+          </div>
+        </div>
+      
+    <% end %>
+
+    </div>
+</div>
+

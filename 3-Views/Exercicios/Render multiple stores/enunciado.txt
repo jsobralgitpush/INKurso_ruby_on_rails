@@ -1,0 +1,16 @@
+Criar uma loja própria para cada vendedor
+
+1-Na rota cloths/index, ter um botão para cada um dos vendedores existentes
+no banco "cloths" que redirecionará para uma rota cloths/:nome_do_lojista
+
+1.1-Mostrar apenas um botão e os demais aparecerem num slide (ADICIONAL)
+
+2-Na rota cloths/:nome_do_lojista:
+  a) logo do lojista que irá redireciona-lo para a main page do lojista
+  b) logo INK que irá voltar para a loja cloths/index
+  c) ter um logo do lojista com um botão chamado "about" no header que irá para a rota cloths/:nome_do_lojista/about. Nesta rota colocar 
+infos sobre o lojista
+
+2.1-Mostrar apenas 8 peças de roupas e ter um botão para ir para a próxima página
+(ADICIONAL)
+
