@@ -1,5 +1,19 @@
 <%= render "header" %>
 
+<br>
+
+<div class="container">
+  <div class="row">
+  <% Cloth.select(:artist).distinct.each do |cloth| %>
+    <div class="col-sm">
+      <%= cloth.artist %>
+    </div>
+  <% end %>
+  </div>
+</div>
+
+
+
 <div class="album py-5 bg-light">
     <div class="row">
 
