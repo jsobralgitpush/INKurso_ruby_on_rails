@@ -1,6 +1,25 @@
 class ClothsController < ApplicationController
   def index
+    @paginate = params[:page].to_i
+
+    @number_records = Cloth.all.count
+
+    if @paginate.present?
+      if @paginate == 1
+        @cloth_paginate = Cloth.where("id <= ?",(@paginate+7))
+      elsif @paginate == 2
+        @cloth_paginate = Cloth.where("id <= ? and id > ?", (@paginate+14) ,(@paginate+7))
+      else
+        @cloth_paginate = Cloth.where("id > ?", (@paginate+14))
+      end
+    end
+
+
   end 
+
+  def about
+    @artist = params[:market]
+  end
 
   def market
     @artist = params[:market]
