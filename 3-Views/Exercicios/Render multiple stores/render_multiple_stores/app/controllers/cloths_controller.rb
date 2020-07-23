@@ -8,17 +8,17 @@ class ClothsController < ApplicationController
     @cloths_from_store = Cloth.where("artist = ?", @artist)
   end
   
-def new
-  end
-
-  def search
-    if params[:search].blank?  
-      redirect_to(root_path) and return  
-    else  
-      @parameter = params[:search].downcase
-      @results = Cloth.all.where("name LIKE ?", "%" + @parameter + "%") 
-      session[:passed_variable] = @results
+  def new
     end
+
+    def search
+      if params[:search].blank?  
+        redirect_to(root_path) and return  
+      else  
+        @parameter = params[:search].downcase
+        @results = Cloth.all.where("name LIKE ?", "%" + @parameter + "%") 
+        session[:passed_variable] = @results
+      end
 
   end
 
