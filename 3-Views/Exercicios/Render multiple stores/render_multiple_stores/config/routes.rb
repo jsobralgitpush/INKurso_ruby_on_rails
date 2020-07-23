@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'cloths/new' => 'cloths#new'
   post 'cloths/new' => 'cloths#create'
   get 'cloths/index' => 'cloths#index'
+  get 'cloths/index/:page' => 'cloths#index', :as => 'cloth_page' 
   get 'cloths/search' => 'cloths#search', :as => 'search_page_cloth'
   get 'cloths/filter(/:gender)(/:tipo)(/:price)' => 'cloths#filter', :as => 'filter_id_cloth'
   get 'cloths/:item' => 'cloths#item', :as => 'cloth_item'
