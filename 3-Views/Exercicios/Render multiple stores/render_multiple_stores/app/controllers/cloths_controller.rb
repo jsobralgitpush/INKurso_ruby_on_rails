@@ -152,7 +152,7 @@ class ClothsController < ApplicationController
   end
 
   private def post_params
-    params.require(:cloth).permit(:name, :style, :url)
+    params.require(:cloth).permit(:name, :artist, :style, :url)
   end
 
 end
