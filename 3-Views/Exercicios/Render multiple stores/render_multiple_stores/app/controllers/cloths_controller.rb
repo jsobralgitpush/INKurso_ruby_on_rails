@@ -4,13 +4,17 @@ class ClothsController < ApplicationController
 
     @number_records = Cloth.all.count
 
+    @number_per_page = 8
+    @number_of_pages = @number_records / @number_per_page
+
+
     if @paginate.present?
       if @paginate == 1
-        @cloth_paginate = Cloth.where("id <= ?",(@paginate+7))
-      elsif @paginate == 2
-        @cloth_paginate = Cloth.where("id <= ? and id > ?", (@paginate+14) ,(@paginate+7))
+        @cloth_paginate = Cloth.where("id <= ?",(@paginate+(@number_per_page-1)))
+      elsif @paginate == @number_of_pages
+        @cloth_paginate = Cloth.where("id >= ?", (@paginate+((@number_of_pages-1)*(@number_per_page-1))))
       else
-        @cloth_paginate = Cloth.where("id > ?", (@paginate+14))
+        @cloth_paginate = Cloth.where("id <= ? and id >= ?", (@paginate+14) ,(@paginate+7))
       end
     end
 
