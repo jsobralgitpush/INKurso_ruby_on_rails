@@ -5,7 +5,15 @@ class ClothsController < ApplicationController
     @number_records = Cloth.all.count
 
     @number_per_page = 8
-    @number_of_pages = @number_records / @number_per_page
+
+    @number_of_pages = @number_records.to_f / @number_per_page
+
+    if (@number_of_pages - @number_of_pages.to_i) > 0
+      @number_of_pages = @number_of_pages.to_i + 1 
+    else
+      @number_of_pages = @number_of_pages.to_i
+    end
+
 
     if @paginate.present?
       if @paginate == 1
@@ -18,6 +26,7 @@ class ClothsController < ApplicationController
     end
 
 
+  
   end 
 
   def about
