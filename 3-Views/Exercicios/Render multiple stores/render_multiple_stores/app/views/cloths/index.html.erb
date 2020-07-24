@@ -6,12 +6,12 @@
   <div class="row">
   <% Cloth.select(:artist).distinct.each do |cloth| %>
     <div class="col-sm">
-      <%= link_to cloth_store_path(cloth.artist) do %> 
-      <button 
-      type="button" 
-      class="btn btn-outline-secondary">
-        <%= cloth.artist %>
-      </button>
+      <%= link_to cloth_market_path(cloth.artist) do %> 
+        <button 
+        type="button" 
+        class="btn btn-outline-secondary">
+          <%= cloth.artist %>
+        </button>
       <% end %>
     </div>
   <% end %>
@@ -23,7 +23,7 @@
 <div class="album py-5 bg-light">
     <div class="row">
 
-      <% Cloth.all.each do |cloth| %>
+      <% @cloth_paginate.each do |cloth| %>
 
         <div class="col-md-3">
           <div class="card mb-3-box-shadow">
@@ -43,3 +43,15 @@
 
     </div>
 </div>
+
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+
+    <% for i in (1..@number_of_pages).to_a  do %>
+      <%= link_to cloth_page_path(i), class: "page-link"  do %>
+        <%= i %>
+      <% end %>
+    <% end %>
+
+  </ul>
+</nav>   
