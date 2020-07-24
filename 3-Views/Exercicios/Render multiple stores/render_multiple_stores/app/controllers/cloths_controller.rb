@@ -21,7 +21,7 @@ class ClothsController < ApplicationController
       elsif @paginate == @number_of_pages
         @cloth_paginate = Cloth.where("id >= ?", (@paginate+((@number_of_pages-1)*(@number_per_page-1))))
       else
-        @cloth_paginate = Cloth.where("id <= ? and id >= ?", (@paginate+((@number_of_pages-1)*(@number_per_page-1))) ,(@paginate+(@number_per_page-1)))
+        @cloth_paginate = Cloth.where("id <= ? and id > ?", (@number_per_page*@paginate) , (@number_per_page*@paginate)-@number_per_page)
       end
     end
 
