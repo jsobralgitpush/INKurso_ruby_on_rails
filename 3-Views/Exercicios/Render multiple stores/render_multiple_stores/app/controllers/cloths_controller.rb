@@ -4,7 +4,7 @@ class ClothsController < ApplicationController
 
     @number_records = Cloth.all.count
 
-    @number_per_page = 8
+    @number_per_page = 5
 
     @number_of_pages = @number_records.to_f / @number_per_page
 
@@ -24,6 +24,7 @@ class ClothsController < ApplicationController
         @cloth_paginate = Cloth.where("id <= ? and id > ?", (@number_per_page*@paginate) , (@number_per_page*@paginate)-@number_per_page)
       end
     end
+
 
 
   

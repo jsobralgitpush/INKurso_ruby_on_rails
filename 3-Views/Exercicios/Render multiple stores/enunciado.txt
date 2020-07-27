@@ -90,7 +90,8 @@ infos sobre o lojista
 
     iii) Criar a rota de redirecionamento
 
-    iv) 
+    iv) Criar conteúdo desta rota 
+    (bootstrap pre-layout)
 
   d) Renderizar todas as as peças de roupas desse lojista
 
@@ -98,8 +99,8 @@ infos sobre o lojista
 
 2.1-Mostrar apenas 8 peças de roupas e ter um botão para ir para a próxima página
 (ADICIONAL)
-  i) Criar a rota de paginação
-
+  (Ver lógica por detras do controller cloths para entender o algoritmo)
+  (Ver )
 
 
 
