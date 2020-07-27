@@ -1,1 +1,7 @@
 1-Criar um branch chamado view/lojista
+  git checkout -d view/lojista
+
+2-Dar o primeiro push para este branch ir para o github
+  git push --set-upstream origin view/lojista
+
+-----------------------------

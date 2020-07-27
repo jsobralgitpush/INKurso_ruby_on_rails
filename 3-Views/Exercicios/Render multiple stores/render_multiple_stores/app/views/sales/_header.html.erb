@@ -2,6 +2,11 @@
   <a class="navbar-brand" href="#">
     <%= image_tag "rsv.png" %>
   </a>
+  
+  <%= link_to cloth_page_path(1), class:'nav-link' do %>
+    Camisetas
+  <% end %>
+
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <%= form_tag(search_page_path, :method => "get",  class: 'navbar-form navbar-left') do %>  
         <div class="input-group">  
@@ -12,4 +17,15 @@
         </div>  
       <% end %>
   </div>
+
 </nav>
+
+<style>
+.nav-link {
+  color: white;
+}
+
+.nav-link:hover {
+  color: gray;
+}
+</style>

@@ -1,18 +1,56 @@
 class ClothsController < ApplicationController
   def index
-  end 
+    @paginate = params[:page].to_i
+
+    @number_records = Cloth.all.count
+
+    @number_per_page = 5
+
+    @number_of_pages = @number_records.to_f / @number_per_page
+
+    if (@number_of_pages - @number_of_pages.to_i) > 0
+      @number_of_pages = @number_of_pages.to_i + 1 
+    else
+      @number_of_pages = @number_of_pages.to_i
+    end
+
+
+    if @paginate.present?
+      if @paginate == 1
+        @cloth_paginate = Cloth.where("id <= ?",(@paginate+(@number_per_page-1)))
+      elsif @paginate == @number_of_pages
+        @cloth_paginate = Cloth.where("id >= ?", (@paginate+((@number_of_pages-1)*(@number_per_page-1))))
+      else
+        @cloth_paginate = Cloth.where("id <= ? and id > ?", (@number_per_page*@paginate) , (@number_per_page*@paginate)-@number_per_page)
+      end
+    end
+
+
+
   
-  def new
+  end 
+
+  def about
+    @artist = params[:market]
   end
 
-  def search
-    if params[:search].blank?  
-      redirect_to(root_path) and return  
-    else  
-      @parameter = params[:search].downcase
-      @results = Cloth.all.where("name LIKE ?", "%" + @parameter + "%") 
-      session[:passed_variable] = @results
+  def market
+    @artist = params[:market]
+
+    @cloths_from_store = Cloth.where("artist = ?", @artist)
+  end
+  
+  def new
     end
+
+    def search
+      if params[:search].blank?  
+        redirect_to(root_path) and return  
+      else  
+        @parameter = params[:search].downcase
+        @results = Cloth.all.where("name LIKE ?", "%" + @parameter + "%") 
+        session[:passed_variable] = @results
+      end
 
   end
 
@@ -122,8 +160,6 @@ class ClothsController < ApplicationController
       @var_test = 1
     end
 
-    raise
-
   end
 
   def item_color
@@ -146,13 +182,12 @@ class ClothsController < ApplicationController
 
   def discount
     #@stock = CourseQuery.where(id: params[:id], status: 0).update(stock)
-  
-
-
   end
 
+
+
   private def post_params
-    params.require(:cloth).permit(:name, :style, :url)
+    params.require(:cloth).permit(:name, :artist, :style, :url)
   end
 
 end

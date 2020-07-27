@@ -2,15 +2,108 @@ Criar uma loja própria para cada vendedor
 
 1-Na rota cloths/index, ter um botão para cada um dos vendedores existentes
 no banco "cloths" que redirecionará para uma rota cloths/:nome_do_lojista
+  a) Criação da rota para esta nova tela - (1-COMMIT 
+  b) Criação do botão na view index/cloths
+    i) Adicionar a coluna "artist" no Model Cloth  (2-COMMIT 'Add column 'artist' to model cloths')
+      rails generate migration add_artist_to_cloths artist:string
+      rails db:migrate RAILS_ENV=development
+
+    ii) Na rota de criação de cloths/new, colocar um campo para artist (3-COMMIT Add)
+          <p>
+            <%= f.label :artist  %>
+            <%= f.text_field :artist  %>
+          </p>
+
+    iii) Colocar artistas ficticios nos dado já existentes e criar novos artistas
+
+    iv) Adicionar botões de fato no código
+      .) <div class="container">
+          <div class="row">
+          <% Cloth.select(:artist).distinct.each do |cloth| %>
+            <div class="col-sm">
+              <%= cloth.artist %>
+            </div>
+          <% end %>
+          </div>
+        </div>
+
+      ..)     <div class="col-sm">
+              <button 
+              type="button" 
+              class="btn btn-outline-secondary">
+              <%= cloth.artist %>
+              </button>
+
+
+
 
 1.1-Mostrar apenas um botão e os demais aparecerem num slide (ADICIONAL)
 
 2-Na rota cloths/:nome_do_lojista:
   a) logo do lojista que irá redireciona-lo para a main page do lojista
   b) logo INK que irá voltar para a loja cloths/index
+
+"""
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<%= link_to cloths_index_path, class: "navbar-brand" do %>
+    <%= image_tag "rsv.png" %>
+<% end %>
+<%= link_to cloth_market_path, class: "navbar-brand" do %>
+    <% if @artist == 'José Sobral' %>
+        <%= image_tag "plant.png" %>
+    <% elsif @artist == 'Cahue Beltrão' %>
+      <%= image_tag "fire.png" %>
+    <% elsif @artist == 'Lucas Bitt' %>
+      <%= image_tag "sword.png" %>
+    <% else %> 
+      <%= image_tag "shield.png" %>
+    <% end %>
+<% end %>
+
+ 
+  <a class="nav-link" href="#">About</a>
+  
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <%= form_tag(search_page_cloth_path, :method => "get",  class: 'navbar-form navbar-left') do %>  
+        <div class="input-group">  
+          <%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %>  
+          <div class="input-group-btn">  
+            <%= button_tag "Procurar", :class => 'btn btn-light',:name => nil%>  
+          </div>  
+        </div>  
+      <% end %>
+  </div>
+
+
+</nav>
+
+"""
+
   c) ter um logo do lojista com um botão chamado "about" no header que irá para a rota cloths/:nome_do_lojista/about. Nesta rota colocar 
 infos sobre o lojista
+    i) Implementar o botão 
+      (ver lógica no _header-artist)
+
+    ii) Mudar a cor do botão
+
+    iii) Criar a rota de redirecionamento
+
+    iv) Criar conteúdo desta rota 
+    (bootstrap pre-layout)
+
+  d) Renderizar todas as as peças de roupas desse lojista
+
+  (olhar lógica dentro do cloths_controller e do market.html.erb)
 
 2.1-Mostrar apenas 8 peças de roupas e ter um botão para ir para a próxima página
 (ADICIONAL)
+  (Ver lógica por detras do controller cloths para entender o algoritmo)
+  (Ver )
 
+
+
+DÚVIDAS
+-crio o controller de lojista?
+-Por que não ficou 100% centralizado o cloths/index button?
