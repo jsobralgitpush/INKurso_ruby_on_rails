@@ -1,0 +1,8 @@
+<%= render "header" %>
+<h3>Search Result</h3>  
+
+    <% @results.each do |result| %>  
+      <h3><%= result.amount %></h3>
+      <p><%= result.client_id %> - <%= Client.find_by(id: result.client_id).name %></p>
+      <p><%= result.product_id %> - <%= Product.find_by(id: result.product_id).name %></p> 
+    <% end %>

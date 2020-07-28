@@ -1,0 +1,20 @@
+Aqui podemos implementar as novas features do MVP!!
+
+IDEIAS
+1-Barra de favoritos
+2-Carrinho de compras
+
+IMPLEMENTAÇÃO
+1-Barra de favoritos
+  a) Colocar o botão na navbar e em cada peça
+    i) baixar img
+    
+    ii) Colocar no navbar
+
+    iii) Criar a rota
+
+    iv) Colocar a opção de fav em cada peça
+
+  b) Plugar uma view
+    i) criar a view
+

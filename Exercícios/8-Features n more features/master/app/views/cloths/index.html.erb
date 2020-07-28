@@ -1,0 +1,81 @@
+<%= render "header" %>
+
+<br>
+
+<div class="album py-5 bg-light">
+    <div class="container content-center">
+      <h2>Visualize apenas a loja de um artista :) </h2>
+      <br>
+
+      <div class="row justify-content-center">  
+      <% Cloth.select(:artist).distinct.each do |cloth| %>
+          <div class="col-sm">
+            <%= link_to cloth_market_path(cloth.artist) do %> 
+              <button 
+              type="button" 
+              class="btn btn-outline-secondary">
+                <%= cloth.artist %>
+              </button>
+            <% end %>
+          </div>
+        <% end %>
+
+      </div>
+    </div>
+</div>
+
+
+
+
+<div class="album py-5 bg-light">
+    <div class="row">
+
+      <% @cloth_paginate.each do |cloth| %>
+
+        <div class="col-md-3">
+          <div class="card mb-3-box-shadow">
+            <%= link_to cloth_item_path(cloth.id) do %>
+              <%= image_tag( cloth.url, class: "card-img-top") %>
+            <% end %>
+            <div class="card-body">
+              <h4><%= cloth.name %></h4>
+              <p class="card-text">História da Camiseta</p>
+              <p class="card-text">R$<%= cloth.price %></p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Comprar</button>
+                </div>
+                <%= link_to cloth_favorite_path(cloth.id) do %>
+                  <%= image_tag "heart.png", class: 'fav-img' %>
+                <% end %>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      
+      <% end %>
+
+    </div>
+</div>
+
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+
+    <% for i in (1..@number_of_pages).to_a  do %>
+      <%= link_to cloth_page_path(i), class: "page-link"  do %>
+        <%= i %>
+      <% end %>
+    <% end %>
+
+  </ul>
+</nav>   
+
+<style>
+.fav-img {
+  height: 50px;
+  /* put value of image height as your need */
+  float: left;
+  margin-right: 7px;
+}
+</style>
