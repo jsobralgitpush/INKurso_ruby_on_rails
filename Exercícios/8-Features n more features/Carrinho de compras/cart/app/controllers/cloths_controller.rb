@@ -54,6 +54,13 @@ class ClothsController < ApplicationController
       @cart_item.save
     else
       Cart.delete(Cart.where('cloth_id = ?', @cloth_id).ids)
+
+      #Give back the cloth to Stock Model
+      @stock = Stock.new
+      @stock.cloth_id = @cloth_id
+      @stock.tamanho = 'P'
+      @stock.cor = 'Branca'
+      @stock.save
     end
 
     @results = Cloth.find(Cart.pluck(:cloth_id).uniq)
