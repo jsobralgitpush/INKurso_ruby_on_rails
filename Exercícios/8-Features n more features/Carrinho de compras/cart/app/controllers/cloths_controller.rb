@@ -39,18 +39,21 @@ class ClothsController < ApplicationController
 
     @cloths_from_store = Cloth.where("artist = ?", @artist)
   end
+
+  def carts
+  end
   
   def new
-    end
+  end
 
-    def search
-      if params[:search].blank?  
-        redirect_to(root_path) and return  
-      else  
-        @parameter = params[:search].downcase
-        @results = Cloth.all.where("name LIKE ?", "%" + @parameter + "%") 
-        session[:passed_variable] = @results
-      end
+  def search
+    if params[:search].blank?  
+      redirect_to(root_path) and return  
+    else  
+      @parameter = params[:search].downcase
+      @results = Cloth.all.where("name LIKE ?", "%" + @parameter + "%") 
+      session[:passed_variable] = @results
+    end
 
   end
 
@@ -177,7 +180,7 @@ class ClothsController < ApplicationController
     @cloth = Cloth.new(post_params)
 
     @cloth.save
-    redirect_to action: 'new' 
+    redirect_to action: 'carts' 
   end
 
   def discount
