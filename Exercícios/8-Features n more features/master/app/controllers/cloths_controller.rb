@@ -197,7 +197,7 @@ class ClothsController < ApplicationController
       @cloth.save
     end
 
-
+    #Lógica para exibirmos todas as cloths que estão no model Favorite
     @array_fav_ids = []
     @id_fav = Favorite.all.select('cloth_id')
 
