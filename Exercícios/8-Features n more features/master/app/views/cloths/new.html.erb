@@ -1,0 +1,27 @@
+<h1>Add Cloth</h1>
+    <%= form_for :cloth, url: cloths_new_path do |f| %>
+      <p>
+        <%= f.label :name  %>
+        <%= f.text_field :name  %>
+      </p>
+
+      <p>
+        <%= f.label :artist  %>
+        <%= f.text_field :artist  %>
+      </p>
+
+      <p>
+        <%= f.label :style  %>
+        <%= f.text_field :style  %>    
+      </p>
+
+      <p>
+        <%= f.label :url  %>
+        <%= f.text_field :url  %>    
+      </p>
+
+      <p>
+        <%= f.submit %> 
+      </p> 
+
+    <% end %>

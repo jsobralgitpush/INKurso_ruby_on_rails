@@ -1,0 +1,28 @@
+Aqui podemos implementar as novas features do MVP!!
+
+IDEIAS
+1-Barra de favoritos
+2-Carrinho de compras
+
+IMPLEMENTAÇÃO
+1-Barra de favoritos
+  a) Colocar o botão na navbar e em cada peça
+    i) baixar img
+    
+    ii) Colocar no navbar
+
+    iii) Criar a rota
+
+    iv) Colocar a opção de fav em cada peça
+
+  b) Plugar uma view
+    i) criar a view favorite
+
+    ii) criar uma view unfavorite
+
+  c) Lógica por trás do Model
+    i) Criação de uma linha no Model Favorite apertando o butão de favoritos
+
+    ii) Remoção dessa linha assim que apertamos o botão de unfavorite
+
+
