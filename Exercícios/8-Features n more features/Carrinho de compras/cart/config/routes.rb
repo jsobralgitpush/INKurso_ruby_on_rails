@@ -21,6 +21,10 @@ Rails.application.routes.draw do
   get 'favorite(/:id)' => 'cloths#favorites', :as => 'cloth_favorite'
   get 'unfavorite(/:id)' => 'cloths#unfavorite', :as => 'cloth_unfavorite'
 
+  #Rota para o cart
+  get 'cart(/:id)' => 'cloths#cart', :as => 'cloth_cart'
+
+
 
   #Rota de lojista
   get 'artist/:market' => 'cloths#market', :as => 'cloth_market'
