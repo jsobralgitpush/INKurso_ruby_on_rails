@@ -42,6 +42,9 @@
               <p class="card-text">História da Camiseta</p>
               <p class="card-text">R$<%= cloth.price %></p>
               <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Preview</button>
+                </div>
                 <%= link_to cloth_favorite_path(cloth.id) do %>
                   <%= image_tag "heart.png", class: 'fav-img' %>
                 <% end %>
