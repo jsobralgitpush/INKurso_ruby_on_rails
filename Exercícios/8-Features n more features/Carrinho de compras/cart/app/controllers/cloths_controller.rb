@@ -42,7 +42,17 @@ class ClothsController < ApplicationController
 
   def carts
     @cloth_id = params[:id]
+
+
+    #Delete one row with @cloth_id from respective cloth from Stock Model
     Stock.delete(Stock.where('cloth_id = ?', @cloth_id).ids[0])
+
+    #Create one row on Cart Model
+    @cart_item = Cart.new
+    @cart_item.cloth_id = @cloth_id
+    @cart_item.save
+
+    #@results = Cart.select(:cloth_id)
 
 
   end
