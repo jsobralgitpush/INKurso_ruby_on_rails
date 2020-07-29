@@ -16,5 +16,13 @@ IMPLEMENTAÇÃO
     iv) Colocar a opção de fav em cada peça
 
   b) Plugar uma view
-    i) criar a view
+    i) criar a view favorite
+
+    ii) criar uma view unfavorite
+
+  c) Lógica por trás do Model
+    i) Criação de uma linha no Model Favorite apertando o butão de favoritos
+
+    ii) Remoção dessa linha assim que apertamos o botão de unfavorite
+
 
