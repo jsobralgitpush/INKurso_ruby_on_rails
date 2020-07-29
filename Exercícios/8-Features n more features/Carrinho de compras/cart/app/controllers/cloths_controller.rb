@@ -43,7 +43,6 @@ class ClothsController < ApplicationController
   def carts
     @cloth_id = params[:id]
 
-
     #Delete one row with @cloth_id from respective cloth from Stock Model
     Stock.delete(Stock.where('cloth_id = ?', @cloth_id).ids[0])
 
@@ -53,6 +52,14 @@ class ClothsController < ApplicationController
     @cart_item.save
 
     @results = Cloth.find(Cart.pluck(:cloth_id).uniq)
+
+    @sub_total = 0
+    for i in @results.pluck(:price)
+      @sub_total += i
+    end
+
+
+
 
 
 
