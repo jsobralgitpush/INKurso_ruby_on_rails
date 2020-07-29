@@ -41,6 +41,10 @@ class ClothsController < ApplicationController
   end
 
   def carts
+    @cloth_id = params[:id]
+    Stock.delete(Stock.where('cloth_id = ?', @cloth_id).ids[0])
+
+
   end
   
   def new
@@ -172,6 +176,7 @@ class ClothsController < ApplicationController
 
     @stocks = Stock.all.where("cloth_id = ? AND cor = ?", @cloth_id, @cloth_color)
     @stocks_uniq_tam = @stocks.map{|s|[s.cor]}.uniq
+
 
   end
 
