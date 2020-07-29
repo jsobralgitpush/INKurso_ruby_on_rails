@@ -24,11 +24,11 @@ class ClothsController < ApplicationController
         @cloth_paginate = Cloth.where("id <= ? and id > ?", (@number_per_page*@paginate) , (@number_per_page*@paginate)-@number_per_page)
       end
     end
-
-
-
   
-  end 
+  end
+  
+  def chekout
+  end
 
   def about
     @artist = params[:market]
@@ -43,6 +43,7 @@ class ClothsController < ApplicationController
   def carts
     @cloth_id = params[:id]
 
+
     #Delete one row with @cloth_id from respective cloth from Stock Model
     Stock.delete(Stock.where('cloth_id = ?', @cloth_id).ids[0])
 
@@ -51,7 +52,8 @@ class ClothsController < ApplicationController
     @cart_item.cloth_id = @cloth_id
     @cart_item.save
 
-    @results = Cloth.find((Cart.select(:cloth_id).ids))
+    @results = Cloth.find(Cart.pluck(:cloth_id).uniq)
+
 
 
   end
