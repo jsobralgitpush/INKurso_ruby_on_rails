@@ -232,8 +232,6 @@ class ClothsController < ApplicationController
     params.require(:cloth).permit(:name, :artist, :style, :url)
   end
 
-  def post_params_fav
-    params.require(:favorite).permit(:cloth_id)
-  end
+
 
 end
