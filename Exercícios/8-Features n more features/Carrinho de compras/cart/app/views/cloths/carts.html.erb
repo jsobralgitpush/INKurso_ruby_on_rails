@@ -30,7 +30,11 @@
                               <td class="text-center"><%= f.select :client_id, options_for_select((1..(Stock.where('cloth_id = ?', cloth.id).count + 1)).to_a) %></td>
                             <% end %>
                             <td class="text-right">R$ <%= cloth.price %></td>
-                            <td class="text-right"><button class="btn btn-sm btn-danger">Excluir</button> </td>
+                            <td class="text-right">
+                            <%= link_to cloth_cart_path(cloth.id, 'yes') do %>
+                                <button class="btn btn-sm btn-danger">Excluir</button>
+                            <% end %> 
+                            </td>
                         </tr>
 
                     <% end %>
