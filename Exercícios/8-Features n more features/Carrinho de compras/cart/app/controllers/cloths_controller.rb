@@ -43,7 +43,6 @@ class ClothsController < ApplicationController
   def carts
     @cloth_id = params[:id]
 
-
     #Delete one row with @cloth_id from respective cloth from Stock Model
     Stock.delete(Stock.where('cloth_id = ?', @cloth_id).ids[0])
 
@@ -52,7 +51,7 @@ class ClothsController < ApplicationController
     @cart_item.cloth_id = @cloth_id
     @cart_item.save
 
-    #@results = Cart.select(:cloth_id)
+    @results = Cloth.find((Cart.select(:cloth_id).ids))
 
 
   end
