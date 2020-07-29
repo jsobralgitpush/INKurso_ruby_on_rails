@@ -27,5 +27,7 @@ IMPLEMENTAÇÃO
 
 
 2-Carrinho de compras
-  a) Colocar o botão do carrinho no nav bar
+  a) Colocar o botão do carrinho no nav bar e ir para uma rota especial
     i) baixar img
+
+    ii) Criar a rota cart
