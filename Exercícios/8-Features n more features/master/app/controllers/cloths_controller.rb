@@ -187,7 +187,8 @@ class ClothsController < ApplicationController
   def favorites
     @cloth_id = params[:id]
 
-
+    #Lógica para criar uma linha no model Favorite, caso a peça selecionada
+    #ainda não esteja dentro dos favoritos
     if Favorite.where('cloth_id = ?', @cloth_id).present?
       #deixar uma mensagem de alerta dizendo que a peça já foi incluida nos favs
     else
