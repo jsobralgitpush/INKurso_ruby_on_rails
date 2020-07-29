@@ -6,6 +6,7 @@ class StocksController < ApplicationController
     @stock = Stock.new(post_params)
 
     @stock.save
+    redirect_to action: 'new'
   end
 
   def discount
