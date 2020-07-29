@@ -211,6 +211,7 @@ class ClothsController < ApplicationController
   def unfavorite
     @cloth_id = params[:id]
 
+    #Lógica para deletarmos uma cloth dos model Favorite
     Favorite.delete(Favorite.where('cloth_id = ?', @cloth_id).ids)
 
     @array_fav_ids = []
