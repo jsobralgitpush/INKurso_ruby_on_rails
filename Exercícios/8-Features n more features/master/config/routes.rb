@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   get 'cloths/filter(/:gender)(/:tipo)(/:price)' => 'cloths#filter', :as => 'filter_id_cloth'
   get 'cloths/:item' => 'cloths#item', :as => 'cloth_item'
   get 'cloths/:item/:color' => 'cloths#item_color', :as => 'cloth_color'
+
+  #Rotas para favoritos
   get 'favorite(/:id)' => 'cloths#favorites', :as => 'cloth_favorite'
   get 'unfavorite(/:id)' => 'cloths#unfavorite', :as => 'cloth_unfavorite'
 
