@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   get 'cart(/:id)' => 'cloths#carts', :as => 'cloth_cart'
 
   #Rota checkout (sem implementação)
-  get 'checkout' => 'cloth#checkout', :as =: 'cloth_checkout'
+  get 'checkout' => 'cloths#checkout', :as => 'cloth_checkout'
 
 
 
