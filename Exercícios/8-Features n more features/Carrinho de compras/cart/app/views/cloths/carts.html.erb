@@ -1,6 +1,5 @@
 <%= render "header" %>
 
-</nav>
 <section class="jumbotron text-center">
     <div class="container">
         <h1 class="jumbotron-heading">E-COMMERCE CART</h1>
@@ -16,39 +15,27 @@
                         <tr>
                             <th scope="col"> </th>
                             <th scope="col">Product</th>
-                            <th scope="col">Available</th>
                             <th scope="col" class="text-center">Quantity</th>
                             <th scope="col" class="text-right">Price</th>
                             <th> </th>
                         </tr>
                     </thead>
                     <tbody>
+                    <% @results.each do |cloth| %>
+
                         <tr>
-                            <td><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
-                            <td>Product Name Dada</td>
-                            <td>In stock</td>
-                            <td><input class="form-control" type="text" value="1" /></td>
-                            <td class="text-right">124,90 €</td>
-                            <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
+                            <td><%= image_tag(cloth.url, class: "img") %> </td>
+                            <td><%= cloth.name %></td>
+                            <%= form_for :cart  do |f| %>
+                              <td class="text-center"><%= f.select :client_id, options_for_select((1..(Stock.where('cloth_id = ?', cloth.id).count)).to_a) %></td>
+                            <% end %>
+                            <td class="text-right">R$ <%= cloth.price %></td>
+                            <td class="text-right"><button class="btn btn-sm btn-danger">Excluir</button> </td>
                         </tr>
+
+                    <% end %>
+
                         <tr>
-                            <td><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
-                            <td>Product Name Toto</td>
-                            <td>In stock</td>
-                            <td><input class="form-control" type="text" value="1" /></td>
-                            <td class="text-right">33,90 €</td>
-                            <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
-                        </tr>
-                        <tr>
-                            <td><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
-                            <td>Product Name Titi</td>
-                            <td>In stock</td>
-                            <td><input class="form-control" type="text" value="1" /></td>
-                            <td class="text-right">70,00 €</td>
-                            <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
-                        </tr>
-                        <tr>
-                            <td></td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -59,12 +46,10 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td></td>
                             <td>Shipping</td>
                             <td class="text-right">6,90 €</td>
                         </tr>
                         <tr>
-                            <td></td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -88,3 +73,8 @@
     </div>
 </div>
 
+<style>
+.img {
+  height: 100px
+}
+</style>
