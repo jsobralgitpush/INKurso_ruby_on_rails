@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   get 'unfavorite(/:id)' => 'cloths#unfavorite', :as => 'cloth_unfavorite'
 
   #Rota para o cart
-  get 'cart(/:id)' => 'cloths#carts', :as => 'cloth_cart'
+  get 'cart(/:id)(/:remove)' => 'cloths#carts', :as => 'cloth_cart'
 
   #Rota checkout (sem implementação)
   get 'checkout' => 'cloths#checkout', :as => 'cloth_checkout'
