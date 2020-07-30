@@ -39,42 +39,42 @@ class WordCountTest < Minitest::Test
   end
 
   def test_ignore_punctuation
-    skip
+    #skip
     phrase = Phrase.new("car: carpet as java: javascript!!&@$%^&")
     counts = {"car"=>1, "carpet"=>1, "as"=>1, "java"=>1, "javascript"=>1}
     assert_equal counts, phrase.word_count
   end
 
   def test_include_numbers
-    skip
+    #skip
     phrase = Phrase.new("testing, 1, 2 testing")
     counts = {"testing"=>2, "1"=>1, "2"=>1}
     assert_equal counts, phrase.word_count
   end
 
   def test_normalize_case
-    skip
+    #skip
     phrase = Phrase.new("go Go GO Stop stop")
     counts = {"go"=>3, "stop"=>2}
     assert_equal counts, phrase.word_count
   end
 
   def test_with_apostrophes
-    skip
+    #skip
     phrase = Phrase.new("First: don't laugh. Then: don't cry.")
     counts = {"first"=>1, "don't"=>2, "laugh"=>1, "then"=>1, "cry"=>1}
     assert_equal counts, phrase.word_count
   end
 
   def test_with_quotations
-    skip
+    #skip
     phrase = Phrase.new("Joe can't tell between 'large' and large.")
     counts = {"joe"=>1, "can't"=>1, "tell"=>1, "between"=>1, "large"=>2, "and"=>1}
     assert_equal counts, phrase.word_count
   end
 
   def test_multiple_spaces_not_detected_as_a_word
-    skip
+    #skip
     phrase = Phrase.new(" multiple   whitespaces")
     counts = {"multiple"=>1, "whitespaces"=>1}
     assert_equal counts, phrase.word_count

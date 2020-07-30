@@ -1,0 +1,80 @@
+<%= render "header" %>
+
+<section class="jumbotron text-center">
+    <div class="container">
+        <h1 class="jumbotron-heading">INK CART</h1>
+     </div>
+</section>
+
+<div class="container mb-4">
+    <div class="row">
+        <div class="col-12">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col"> </th>
+                            <th scope="col">Product</th>
+                            <th scope="col">Color</th>
+                            <th scope="col">Size</th>
+                            <th scope="col" class="text-center">Quantity</th>
+                            <th scope="col" class="text-right">Price</th>
+                            <th> </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <% @results.each do |cloth| %>
+
+                        <tr>
+                            <td><%= image_tag(cloth.url, class: "img") %> </td>
+                            <td><%= cloth.name %></td>
+                            <td>Cor</td>
+                            <td>Tamanho</td>
+                            <%= form_for :cart  do |f| %>
+                              <td class="text-center"><%= f.select :client_id, options_for_select((1..(Stock.where('cloth_id = ?', cloth.id).count + 1)).to_a) %></td>
+                            <% end %>
+                            <td class="text-right">R$ <%= cloth.price %></td>
+                            <td class="text-right">
+                            <%= link_to cloth_cart_path(cloth.id, 'yes') do %>
+                                <button class="btn btn-sm btn-danger">Excluir</button>
+                            <% end %> 
+                            </td>
+                        </tr>
+
+                    <% end %>
+
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><strong>Total</strong></td>
+                            <td class="text-right"><strong>R$ <%= @sub_total %></strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col mb-2">
+            <div class="row">
+                <div class="col-sm-12  col-md-6">
+                  <%= link_to cloth_page_path(1) do %>
+                    <button class="btn btn-block btn-light">Continue Shopping</button>
+                  <% end %>
+                </div>
+                <div class="col-sm-12 col-md-6 text-right">
+                  <%= link_to cloth_checkout_path do %>
+                    <button class="btn btn-lg btn-block btn-success text-uppercase">Checkout</button>
+                  <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.img {
+  height: 100px
+}
+</style>

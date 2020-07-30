@@ -10,7 +10,6 @@ Rails.application.routes.draw do
 
   get 'cloths/new' => 'cloths#new'
   post 'cloths/new' => 'cloths#create'
-  get 'cloths/index' => 'cloths#index'
   get 'cloths/index/:page' => 'cloths#index', :as => 'cloth_page' 
   get 'cloths/search' => 'cloths#search', :as => 'search_page_cloth'
   get 'cloths/filter(/:gender)(/:tipo)(/:price)' => 'cloths#filter', :as => 'filter_id_cloth'
@@ -20,6 +19,13 @@ Rails.application.routes.draw do
   #Rotas para favoritos
   get 'favorite(/:id)' => 'cloths#favorites', :as => 'cloth_favorite'
   get 'unfavorite(/:id)' => 'cloths#unfavorite', :as => 'cloth_unfavorite'
+
+  #Rota para o cart
+  get 'cart(/:id)(/:remove)' => 'cloths#carts', :as => 'cloth_cart'
+
+  #Rota checkout (sem implementação)
+  get 'checkout' => 'cloths#checkout', :as => 'cloth_checkout'
+
 
 
   #Rota de lojista

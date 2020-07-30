@@ -1,11 +1,6 @@
 <h1>Add Stock</h1>
 <%= form_for :stock, url: stocks_new_path  do |f| %>
   <p>
-    <%= f.label :stock  %>
-    <%= f.text_field :stock  %>
-  </p>
-
-  <p>
     <%= f.label :cloth_id %>
     <%= f.select :cloth_id, options_for_select(Cloth.all.map{|s|[s.name, s.id]}) %>
   </p>
@@ -15,7 +10,7 @@
     <%= f.text_field :tamanho %>
   </p>
 
-  <p>
+<p>
     <%= f.label :cor  %>
     <%= f.text_field :cor %>
   </p>

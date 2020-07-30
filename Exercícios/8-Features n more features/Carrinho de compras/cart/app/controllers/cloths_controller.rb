@@ -24,11 +24,11 @@ class ClothsController < ApplicationController
         @cloth_paginate = Cloth.where("id <= ? and id > ?", (@number_per_page*@paginate) , (@number_per_page*@paginate)-@number_per_page)
       end
     end
-
-
-
   
-  end 
+  end
+  
+  def chekout
+  end
 
   def about
     @artist = params[:market]
@@ -39,18 +39,56 @@ class ClothsController < ApplicationController
 
     @cloths_from_store = Cloth.where("artist = ?", @artist)
   end
-  
-  def new
+
+  def carts
+    @cloth_id = params[:id]
+    @remove = params[:remove]
+
+
+    if @remove.blank?
+      #Delete one row with @cloth_id from respective cloth from Stock Model
+      Stock.delete(Stock.where('cloth_id = ?', @cloth_id).ids[0])
+
+      #Create one row on Cart Model
+      @cart_item = Cart.new
+      @cart_item.cloth_id = @cloth_id
+      @cart_item.save
+    else
+      Cart.delete(Cart.where('cloth_id = ?', @cloth_id).ids)
+
+      #Give back the cloth to Stock Model
+      @stock = Stock.new
+      @stock.cloth_id = @cloth_id
+      @stock.tamanho = 'P'
+      @stock.cor = 'Branca'
+      @stock.save
     end
 
-    def search
-      if params[:search].blank?  
-        redirect_to(root_path) and return  
-      else  
-        @parameter = params[:search].downcase
-        @results = Cloth.all.where("name LIKE ?", "%" + @parameter + "%") 
-        session[:passed_variable] = @results
-      end
+    @results = Cloth.find(Cart.pluck(:cloth_id).uniq)
+
+    @sub_total = 0
+    for i in @results.pluck(:price)
+      @sub_total += i
+    end
+
+
+
+
+
+
+  end
+  
+  def new
+  end
+
+  def search
+    if params[:search].blank?  
+      redirect_to(root_path) and return  
+    else  
+      @parameter = params[:search].downcase
+      @results = Cloth.all.where("name LIKE ?", "%" + @parameter + "%") 
+      session[:passed_variable] = @results
+    end
 
   end
 
@@ -167,7 +205,7 @@ class ClothsController < ApplicationController
     @cloth_color = params[:color]
     @results = Cloth.all.where("id = ?", @cloth_id)
 
-    @stocks = Stock.all.where("cloth_id = ? AND cor = ?", @cloth_id, @cloth_color)
+    @stocks = Stock.where("cloth_id = ? AND cor = ?", @cloth_id, @cloth_color)
     @stocks_uniq_tam = @stocks.map{|s|[s.cor]}.uniq
 
   end
@@ -177,7 +215,7 @@ class ClothsController < ApplicationController
     @cloth = Cloth.new(post_params)
 
     @cloth.save
-    redirect_to action: 'new' 
+    redirect_to action: 'carts' 
   end
 
   def discount

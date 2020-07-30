@@ -63,13 +63,11 @@
               <p>
                 <%= f.select :tamanho, options_for_select(@stocks.map{|s|[s.tamanho]}.uniq) %>
               </p>
-
-            <p>
-              <%= f.submit class: "btn btn-dark" %> 
-            </p> 
-            
             <% end %>
 
+            <%= link_to cloth_cart_path(cloth.id) do %>
+              <button class="btn btn-dark">Comprar</button>
+            <% end %>
     
         </div>
       </div>
