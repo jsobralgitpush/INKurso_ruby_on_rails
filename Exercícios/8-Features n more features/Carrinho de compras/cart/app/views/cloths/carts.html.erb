@@ -15,6 +15,8 @@
                         <tr>
                             <th scope="col"> </th>
                             <th scope="col">Product</th>
+                            <th scope="col">Collor</th>
+                            <th scope="col">Size</th>
                             <th scope="col" class="text-center">Quantity</th>
                             <th scope="col" class="text-right">Price</th>
                             <th> </th>
@@ -26,6 +28,8 @@
                         <tr>
                             <td><%= image_tag(cloth.url, class: "img") %> </td>
                             <td><%= cloth.name %></td>
+                            <td>Cor</td>
+                            <td>Tamanho</td>
                             <%= form_for :cart  do |f| %>
                               <td class="text-center"><%= f.select :client_id, options_for_select((1..(Stock.where('cloth_id = ?', cloth.id).count + 1)).to_a) %></td>
                             <% end %>
@@ -43,8 +47,10 @@
                             <td></td>
                             <td></td>
                             <td></td>
+                            <td></td>
+                            <td></td>
                             <td><strong>Total</strong></td>
-                            <td class="text-right"><strong><%= @sub_total %> R$</strong></td>
+                            <td class="text-right"><strong>R$ <%= @sub_total %></strong></td>
                         </tr>
                     </tbody>
                 </table>
