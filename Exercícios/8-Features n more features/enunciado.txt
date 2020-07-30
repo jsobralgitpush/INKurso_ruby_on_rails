@@ -31,3 +31,14 @@ IMPLEMENTAÇÃO
     i) baixar img
 
     ii) Criar a rota cart
+
+    iii) Apontar a img para esta rota
+
+  b) View cart
+    i) Criar a view deste cart
+
+  c) Model Cart
+    i) Criar o model Cart
+
+  d) Controller Cart
+    i) Quando clicamos em "save stock", temos que salvar a camisa no carrinho
