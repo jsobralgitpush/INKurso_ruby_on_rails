@@ -44,6 +44,7 @@ class ClothsController < ApplicationController
     @cloth_id = params[:id]
     @remove = params[:remove]
 
+
     if @remove.blank?
       #Delete one row with @cloth_id from respective cloth from Stock Model
       Stock.delete(Stock.where('cloth_id = ?', @cloth_id).ids[0])
@@ -204,9 +205,8 @@ class ClothsController < ApplicationController
     @cloth_color = params[:color]
     @results = Cloth.all.where("id = ?", @cloth_id)
 
-    @stocks = Stock.all.where("cloth_id = ? AND cor = ?", @cloth_id, @cloth_color)
+    @stocks = Stock.where("cloth_id = ? AND cor = ?", @cloth_id, @cloth_color)
     @stocks_uniq_tam = @stocks.map{|s|[s.cor]}.uniq
-
 
   end
 
